@@ -1,0 +1,351 @@
+.bs-section {
+  padding: 10px 20px;
+  color: #222;
+}
+
+.dark-mode .bs-section {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.bs-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.bs-section p {
+  text-align: center;
+  color: black;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.dark-mode .bs-section p {
+  color: #fff;
+}
+
+.bs-steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.bs-step-card {
+  border: 4px solid #003366;
+  border-radius: 50%;
+  width: 230px;
+  height: 230px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.dark-mode .bs-step-card {
+  background-color: #2b2b2b;
+  border-color: #3399ff;
+  color: #fff;
+}
+
+.bs-step-card:hover {
+  transform: translateY(-5px);
+}
+
+.bs-step-number {
+  position: absolute;
+  top: -12px;
+  background-color: #003366;
+  color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-mode .bs-step-number {
+  background-color: #3399ff;
+}
+
+.bs-step-info h3 {
+  font-size: 1rem;
+  color: inherit;
+  margin-bottom: 6px;
+}
+
+.bs-step-info p {
+  font-size: 0.85rem;
+  color: inherit;
+  line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.art-section {
+  padding: 40px 20px;
+  max-width: 100%;
+  margin: 0 auto;
+  color: #222;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dark-mode .art-section {
+  background-color: #1e1e1e;
+  color: #ddd;
+}
+
+.art-article {
+  margin-bottom: 60px;
+}
+
+.art-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: inherit;
+}
+
+.art-intro {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: inherit;
+}
+
+.art-list {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  color: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  list-style-type: disc;
+}
+
+.art-list li {
+  margin-bottom: 8px;
+}
+
+.art-summary {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: inherit;
+}
+
+/* Dark mode overrides */
+.dark-mode .art-list {
+  color: #bbb;
+}
+
+.dark-mode .art-summary {
+  color: #ccc;
+}
+
+
+
+
+
+
+.business-video-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 10px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.business-video-section__text {
+  flex: 1;
+}
+
+.business-video-section__label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.business-video-section__title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.business-video-section__subtitle {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #e1e1e1;
+  opacity: 0.3;
+  margin-bottom: 25px;
+  user-select: none;
+}
+
+.business-video-section__description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  max-width: 520px;
+}
+
+/* Video styles */
+.business-video-section__video {
+  flex: 1;
+  max-width: 520px;
+}
+
+.business-video-section__video video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .business-video-section__label {
+  color: #ddd; /* brighter label */
+}
+.dark-mode .business-video-section{
+  background-color: #000;
+}
+
+.dark-mode .business-video-section__title {
+  color: #fff; /* white for strong contrast */
+}
+
+.dark-mode .business-video-section__subtitle {
+  color: #888; /* darker gray */
+  opacity: 0.6; /* more visible but still subtle */
+}
+
+.dark-mode .business-video-section__description {
+  color: #ccc; /* light gray, readable */
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .business-video-section {
+    flex-direction: column;
+  }
+
+  .business-video-section__text,
+  .business-video-section__video {
+    max-width: 100%;
+  }
+
+  .business-video-section__subtitle {
+    font-size: 2.5rem;
+  }
+}
+
+
+
+
+
+
+
+.cta-navigation-section {
+  width: 100%;
+  max-width: 100%; /* ensures it doesn't exceed screen width */
+  box-sizing: border-box; /* include padding in width */
+  overflow-x: hidden; /* prevent horizontal scroll */
+  
+  background-color: #003366; /* Deep blue */
+  color: white;
+  padding: 50px 20px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 20px;
+
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 51, 102, 0.4);
+}
+
+
+.cta-navigation-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+
+.cta-navigation-section p {
+  font-size: 1.1rem;
+  margin: 0;
+  max-width: 400px;
+  line-height: 1.5;
+  color: #e6e6e6; /* Slightly softer white for readability */
+  text-align: center;
+}
+
+.cta-button {
+  background-color: #899097; /* Darker blue */
+  border: none;
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  align-self: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover and focus enhancements */
+.cta-button:hover,
+.cta-button:focus {
+  background-color: #0050a0; /* Lighter blue on hover */
+  outline: none;
+  transform: scale(1.03);
+}
+
+/* Optional Dark Mode Specific Enhancements */
+.dark-mode .cta-navigation-section {
+  background-color: #001f3f; /* Even darker for contrast in dark mode */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+.cta-navigation-section{
+  width: 100%;
+}
+
+.dark-mode .cta-navigation-section p {
+  color: #ccc; /* Softer for dark mode */
+}
+
+.dark-mode .cta-navigation-section h2 {
+  color: #fff;
+}
+
+.cta-button:hover {
+  background-color: #d4d2d2;
+}
+

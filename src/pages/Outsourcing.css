@@ -1,0 +1,621 @@
+.cloud-section {
+  padding: 30px 10%;
+  background-color: #e1e3ed;
+
+}
+
+.cloud-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cloud-content {
+  flex: 1;
+}
+
+.cloud-content h2 {
+  font-size: 1.5rem;
+  font-weight: 650;
+  text-align: justify;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.cloud-content p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  text-align: justify;
+  color: #444;
+  line-height: 1.6;
+}
+
+.cloud-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.cloud-features li {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+  color: #333;
+}
+
+.cloud-btn {
+  padding: 12px 25px;
+  background: darkblue;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cloud-btn:hover {
+  background: rgb(12, 12, 82);
+  color:white;
+  transform: translateY(-2px);
+}
+
+.cloud-image {
+  flex: 1;
+  text-align: center;
+}
+
+.cloud-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Mobile Responsive */
+@media (max-width: 768px) {
+  .cloud-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cloud-content {
+    order: 2;
+  }
+
+  .cloud-image {
+    order: 1;
+  }
+}
+/* 🌙 Dark Theme for Cloud Section */
+
+
+body.dark-theme .cloud-content h2 {
+  color: #ffffff;
+}
+
+body.dark-theme .cloud-content p {
+  color: #cccccc;
+}
+
+body.dark-theme .cloud-features li {
+  color: #dddddd;
+}
+
+body.dark-theme .cloud-btn {
+  background: #007BFF;
+  color: #fff;
+}
+
+body.dark-theme .cloud-btn:hover {
+  background: #0056b3;
+  color: #fff;
+}
+
+body.dark-theme .cloud-image img {
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.05);
+}
+
+
+
+
+
+
+
+
+
+/* Existing styles remain unchanged */
+
+/* Talent grid styles */
+
+.talent-grid-section {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.talent-grid-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--text-color, #222);
+}
+
+/* Grid container */
+.talent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+/* Each grid item */
+.talent-item {
+  position: relative;
+  height: 180px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.talent-item .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  text-align: center;
+}
+
+.talent-item:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.talent-item:hover .overlay {
+  opacity: 1;
+}
+
+.text-content h4 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  text-shadow: 0 0 6px rgba(0,0,0,0.8);
+}
+
+.text-content p {
+  color: #ddd;
+  font-size: 0.9rem;
+  text-shadow: 0 0 4px rgba(0,0,0,0.7);
+}
+
+/* Optional: dark mode color variables */
+.dark-mode {
+  --text-color: #eee;
+}
+
+/* Optional: adapt colors if needed */
+
+
+
+
+
+
+
+
+
+
+
+/* === Why Outsource Section Updated === */
+.why-outsource {
+  background: #e1e3ed;
+  padding: 10px 10%;
+  text-align: center;
+}
+
+.why-outsource h2 {
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  color: #111;
+}
+
+/* Updated Flex Layout for 3 cards in one row */
+.why-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  flex-wrap: nowrap;
+}
+
+/* Updated card shape and hover effect */
+.why-item {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 20px 60px 20px 60px; /* 🔁 unique curve corners */
+  max-width: 350px;
+  min-height: 240px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.why-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.why-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #0a1f44;
+  font-weight: bold;
+}
+
+.why-item p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+
+
+
+
+
+
+.outsourcing-process {
+  padding: 20px 10%;
+  background: #f5f7fa;
+}
+
+.outsourcing-process h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  color: #0b2545;
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-self: center;
+  position: relative;
+  margin-left: 30px;
+}
+
+.step-line {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.step-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0a66c2;
+  margin-right: 25px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.step-number::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  width: 2px;
+  height: calc(100% + 20px);
+  background-color: #d0d8e0;
+}
+
+.step-line:last-child .step-number::after {
+  display: none;
+}
+
+.step-info h4 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.step-info p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .step-line {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .step-number {
+    margin-bottom: 10px;
+  }
+
+  .step-number::after {
+    left: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.dark-mode-section {
+  background-color: darkblue; /* Darker blue-gray background */
+  color: #ececec; /* Soft light text */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 48px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+}
+
+.dark-mode-section .content h2 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin: 0 0 8px 0;
+  color: #ffffff;
+}
+
+.dark-mode-section .content p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #b0b8c1; /* Slightly muted text */
+}
+
+.dark-mode-section .call-btn {
+  background-color: white; /* Teal accent */
+  color: #1f2937; /* Dark text inside button */
+  border: none;
+  border-radius: 30px;
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  box-shadow: 0 3px 6px rgba(235, 237, 237, 0.6);
+}
+
+.dark-mode-section .call-btn:hover {
+  background-color: white;
+  color: darkblue;
+}
+
+
+/* Base (Light) styles */
+.dark-mode-section {
+  background-color: #f0f4ff; /* Light background */
+  color: #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 48px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode-section .content h2 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin: 0 0 8px 0;
+  color: inherit;
+}
+
+.dark-mode-section .content p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.dark-mode-section .call-btn {
+  background-color: darkblue;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  box-shadow: 0 3px 6px rgba(12, 12, 82, 0.6);
+}
+
+.dark-mode-section .call-btn:hover {
+  background-color: rgb(12, 12, 82);
+  color: white;
+}
+
+/* Toggle button */
+.toggle-btn {
+  background-color: transparent;
+  border: 2px solid currentColor;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: inherit;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: currentColor;
+  color: #f0f4ff;
+}
+
+/* === Dark Theme styles === */
+.dark-mode {
+ 
+  color: #e0e0e0;
+}
+
+
+
+
+
+.dark-mode .hero h1 {
+  color: #fff;
+}
+
+
+
+.dark-mode .cloud-content h2,
+.dark-mode .cloud-content p,
+.dark-mode .cloud-features li span {
+  color: #ccc;
+}
+
+.dark-mode .cloud-features li {
+  color: #aaa;
+}
+
+.dark-mode .cloud-btn {
+  background-color: #61dafb;
+  color: #121212;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .cloud-btn:hover {
+  background-color: #21a1f1;
+}
+
+.dark-mode .cloud-image img {
+  filter: brightness(0.7);
+}
+
+.dark-mode .talent-grid-section {
+  background-color: #1c1c1c;
+  color: #ddd;
+}
+
+.dark-mode .talent-grid-section h2 {
+  color: #eee;
+}
+
+.dark-mode .talent-item .overlay {
+  background: rgba(0, 0, 0, 0.6);
+  color: #eee;
+}
+
+.dark-mode .talent-item:hover .overlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.dark-mode .talent-item h4 {
+  color: #61dafb;
+}
+
+.dark-mode .talent-item p {
+  color: #ccc;
+}
+
+.dark-mode .why-outsource {
+  background-color: #121212;
+  color: #ddd;
+}
+
+.dark-mode .why-outsource h2 {
+  color: #eee;
+}
+
+.dark-mode .why-item {
+  background-color: #1e1e1e;
+  color: #bbb;
+}
+
+.dark-mode .why-item h3 {
+  color: #61dafb;
+}
+
+.dark-mode .outsourcing-process {
+  background-color: #1a1a1a;
+  color: #ddd;
+}
+
+.dark-mode .outsourcing-process h2 {
+  color: #eee;
+}
+
+.dark-mode .step-line {
+  background-color: #222;
+  box-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+.dark-mode .step-number {
+  background-color: #61dafb;
+  color: #121212;
+}
+
+.dark-mode .step-info h4 {
+  color: #61dafb;
+}
+
+.dark-mode .step-info p {
+  color: #ccc;
+}
+
+.dark-mode .dark-mode-section {
+  background-color: #121212;
+  color: #eee;
+  box-shadow: 0 0 10px rgba(0,0,0,0.9);
+}
+
+.dark-mode .dark-mode-section h2 {
+  color: #61dafb;
+}
+
+.dark-mode .dark-mode-section p {
+  color: #ccc;
+}
+
+.dark-mode .call-btn {
+  background-color: #61dafb;
+  color: #121212;
+}
+
+.dark-mode .call-btn:hover {
+  background-color: #21a1f1;
+}
+
+.dark-mode img {
+  filter: brightness(0.85);
+}
+.dark-mode .cloud-section{
+  background-color:#000;
+}

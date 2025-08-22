@@ -1,0 +1,186 @@
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --dropdown-bg: #f0f0f0;
+  --hover-bg: #ddd;
+  --header-border: #ccc;
+}
+:root {
+  --bg-color: white;
+  --text-color: black;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #f0f0f0;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --dropdown-bg: #333;
+  --hover-bg: #444;
+  --header-border: #444;
+}
+
+/* Header layout */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--header-border);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Logo */
+.logo img {
+  height: 40px;
+}
+
+/* Nav layout */
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+}
+
+/* Nav links */
+.nav-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: darkblue;
+  font-weight: bold;
+}
+
+/* Dropdown arrow */
+.arrow {
+  font-size: 0.6rem;
+  margin-left: 0.3rem;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--dropdown-bg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  z-index: 1000;
+  border-radius: 4px;
+}
+
+.dropdown a {
+  padding: 0.75rem 1rem;
+  color: var(--text-color);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown a:hover {
+  background-color: var(--hover-bg);
+  color: black;
+}
+
+/* Right section */
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Theme toggle */
+.themeToggle {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+/* Avatar */
+.avatarContainer {
+  display: flex;
+  align-items: center;
+}
+
+.avatarCircle {
+  background-color:darkblue;
+  color: white;
+  width: 40px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Avatar dropdown */
+.avatarDropdown button:hover {
+  background-color: var(--hover-bg);
+}
+
+/* Hamburger menu (mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

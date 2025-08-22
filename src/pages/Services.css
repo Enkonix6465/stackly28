@@ -1,0 +1,541 @@
+/* section2 */
+.coaching-solutions-section {
+  background-color: #f3f5f7; /* light blue */
+  color: #000; /* black text */
+  padding: 60px 40px;
+  border-radius: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.coaching-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.coaching-images-wrapper {
+  position: relative;
+  width: 500px;
+  height: 380px;
+  min-width: 320px;
+}
+
+.coaching-image {
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.coaching-image-top {
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.coaching-image-bottom {
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  filter: brightness(0.95);
+}
+
+/* Hover effect: slightly zoom images and lift with shadow */
+.coaching-images-wrapper:hover .coaching-image-top {
+  transform: translate(-10px, -10px) scale(1.05);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25);
+}
+
+.coaching-images-wrapper:hover .coaching-image-bottom {
+  transform: translate(10px, 10px) scale(1.05);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.15);
+}
+
+.coaching-text-content {
+  max-width: 600px;
+  font-size: 1rem;
+  color:#000000;
+}
+
+.coaching-text-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.coaching-text-content p {
+  font-size: 1.1rem;
+  color:#000;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 18px;
+}
+
+/* Dark mode for coaching solutions section */
+.dark-mode .coaching-solutions-section {
+  background-color: #121a2a; /* dark blue/black */
+  color: #e0e6f1; /* light text */
+}
+
+.dark-mode .coaching-solutions-section .coaching-text-content {
+  color: #e0e6f1;
+}
+
+.dark-mode .coaching-solutions-section .coaching-text-content h2 {
+  color: #a8c0ff;
+}
+
+.dark-mode .coaching-solutions-section .coaching-text-content p {
+  color: #cbd3e6;
+}
+
+/* Images wrapper remains mostly same but shadows change for dark */
+.dark-mode .coaching-solutions-section .coaching-image {
+  box-shadow: 0 12px 25px rgba(255, 255, 255, 0.1);
+  filter: brightness(1.1);
+}
+
+/* Hover effect in dark mode: glow with lighter shadows */
+.dark-mode .coaching-solutions-section .coaching-images-wrapper:hover .coaching-image-top {
+  transform: translate(-10px, -10px) scale(1.05);
+  box-shadow: 0 16px 35px rgba(168, 192, 255, 0.7);
+}
+
+.dark-mode .coaching-solutions-section .coaching-images-wrapper:hover .coaching-image-bottom {
+  transform: translate(10px, 10px) scale(1.05);
+  box-shadow: 0 16px 35px rgba(168, 192, 255, 0.4);
+  filter: brightness(1.05);
+}
+
+
+
+
+
+.core-solutions-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.core-solution-box {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.core-solution-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.core-box-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: darkblue; /* deep magenta */
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: opacity 0.4s ease;
+  text-align: center;
+}
+
+.core-box-overlay h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color:#fff;
+}
+
+.core-box-arrow {
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.core-solution-box:hover {
+  transform: scale(1.03);
+}
+
+.core-solution-box:hover img {
+  transform: scale(1.1);
+}
+
+.core-solution-box:hover .core-box-overlay {
+  opacity: 1;
+}
+
+.core-solution-box:hover .core-box-arrow {
+  transform: translateX(10px);
+}
+
+.core-solutions-heading h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #0b0b0b;
+  text-align: center;
+}
+
+.core-solutions-heading p {
+  font-size: 1.1rem;
+  color: #4a4a4a;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.dark-mode .core-solutions-heading h2 {
+  color: #ffffff; /* white or light text for dark background */
+}
+
+.dark-mode .core-solutions-heading p {
+  color: #cccccc; /* softer white for paragraph */
+}
+
+.dark-mode .core-solutions-heading  {
+  background-color: #000;/* white or light text for dark background */
+}
+.dark-mode .core-solutions-boxes{
+  background-color: #000;
+}
+.dark-mode body{
+  background-color: #000;
+}
+
+
+
+
+
+
+.apart-section {
+  padding: 0px 20px;
+  background: var(--background, #f9f9f9);
+  text-align: center;
+  color: var(--text-color, #222);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.apart-main-heading {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  letter-spacing: 1.2px;
+}
+
+.apart-subheading {
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  color: var(--text-muted, #555);
+  font-style: italic;
+}
+
+.apart-features-container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.apart-feature-card {
+  position: relative; /* needed for overlay */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgb(0 0 0 / 0.1);
+  padding: 30px 20px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  overflow: hidden; /* clip overlay */
+}
+
+.apart-feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(69, 70, 70, 0.15); /* subtle blue overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+  pointer-events: none; /* allow clicks to pass through */
+}
+
+.apart-feature-card:hover::before {
+  opacity: 1;
+}
+
+.apart-feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgb(0 0 0 / 0.15);
+}
+
+.apart-feature-card .apart-icon {
+  font-size: 3.5rem;
+  color: #007bff;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.apart-feature-card:hover .apart-icon {
+  color: #0056b3;
+}
+
+.apart-feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.apart-feature-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.apart-strength-bar {
+  height: 12px;
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.apart-strength-bar .apart-progress {
+  height: 100%;
+  background: darkblue;
+  border-radius: 20px 0 0 20px;
+  transition: width 1s ease;
+}
+
+.apart-strength-value {
+  font-weight: 600;
+  color: darkblue;
+  font-size: 1rem;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Dark mode support */
+.dark-mode .apart-section {
+  background: #121212; /* very dark background */
+  color: #eee; /* light text */
+}
+
+.dark-mode .apart-feature-card {
+  background: #1c1c1c; /* slightly lighter black for cards */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* strong dark shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.dark-mode .apart-feature-card::before {
+  background-color: rgba(58, 132, 255, 0.25); /* brighter blue overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.dark-mode .apart-feature-card:hover::before {
+  opacity: 1;
+}
+
+.dark-mode .apart-feature-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9); /* stronger shadow on hover */
+  transform: translateY(-10px);
+}
+
+.dark-mode .apart-feature-card .apart-icon {
+  filter: brightness(0) invert(1); /* white icons */
+  margin-bottom: 20px;
+  transition: filter 0.3s ease;
+}
+
+.dark-mode .apart-feature-card:hover .apart-icon {
+  filter: brightness(0) invert(0.7); /* slightly less bright on hover */
+}
+
+.dark-mode .apart-feature-card h3 {
+  color: #3a84ff; /* bright blue for headings */
+  font-weight: 700;
+}
+
+.dark-mode .apart-feature-card p {
+  color: #ccc; /* softer white for paragraphs */
+}
+
+.dark-mode .apart-strength-bar {
+  background: #333; /* dark track */
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  height: 12px;
+}
+
+.dark-mode .apart-strength-bar .apart-progress {
+  background: #3a84ff; /* bright blue fill */
+  border-radius: 20px 0 0 20px;
+  transition: width 1s ease;
+  height: 100%;
+}
+
+.dark-mode .apart-strength-value {
+  color: #3a84ff;
+  font-weight: 600;
+  font-size: 1rem;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+
+
+
+
+
+/* Variables for colors */
+:root {
+  --ring-blue: #003366;
+  --ring-green: darkblue;
+  --ring-orange: darkblue;
+  --ring-bg-light: #ddd;
+  --ring-bg-dark: #222;
+  --text-light: #222;
+  --text-dark: #eee;
+  --quote-border-light: #007bff;
+  --quote-border-dark: #003366;
+  --quote-bg-light: #fff;
+  --quote-bg-dark: #525050;
+  --quote-text: #ffffff;          /* pure white */
+  --quote-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Expertise Section */
+.exp-section {
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--text-light);
+  background-color: var(--quote-bg-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.exp-dark {
+  background-color: #000;
+  color: var(--text-dark);
+}
+
+/* Heading */
+.exp-heading {
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+/* Rings Container */
+.exp-rings-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Individual ring wrapper */
+.exp-ring-wrapper {
+  width: 140px;
+  height: 140px;
+  position: relative;
+}
+
+/* SVG Rings */
+.exp-ring-svg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.exp-ring-progress {
+  transition: stroke-dasharray 1.5s ease;
+}
+
+.exp-ring-wrapper circle:first-child {
+  stroke: var(--ring-bg-light);
+}
+
+.exp-dark .exp-ring-wrapper circle:first-child {
+  stroke: var(--ring-bg-dark);
+}
+
+/* Percentage Text inside ring */
+.exp-ring-percent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: inherit;
+}
+
+/* Label below ring */
+.exp-ring-label {
+  margin-top: 10px;
+  font-weight: 600;
+  color: inherit;
+}
+
+/* Quote Carousel */
+.qc-carousel {
+  padding: 50px 20px;
+  max-width: 700px;
+  margin: 40px auto 80px;
+  font-style: italic;
+  font-size: 1.3rem;
+  text-align: center;
+  background-color: var(--quote-bg-light);
+  color: var(--text-light);
+  border-left: 6px solid var(--quote-border-light);
+  box-shadow: 0 0 15px var(--quote-shadow);
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.qc-dark {
+  background-color: var(--quote-bg-dark);
+  color: var(--quote-text);
+  border-left-color: var(--quote-border-dark);
+}
+
+/* Quote Text */
+.qc-quote-text {
+  margin: 0;
+}
+
+/* Quote Author */
+.qc-quote-author {
+  margin-top: 15px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+

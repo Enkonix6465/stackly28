@@ -1,0 +1,139 @@
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #007bff;
+  --card-bg: #f5f7fa;
+}
+
+html[data-theme="dark"] {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --accent-color: #1e90ff;
+  --card-bg: #1f1f1f;
+}
+
+.ai-data-section {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.ai-data-card {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 900px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+.ai-data-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.ai-data-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+.ai-point {
+  background-color: rgba(0, 123, 255, 0.05);
+  border-left: 4px solid var(--accent-color);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.ai-point:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  transform: scale(1.02);
+}
+
+.ai-read-more {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent-color);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.ai-read-more:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+/* Dark theme overrides using body.dark-theme */
+body.dark-theme .ai-data-section {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-theme .ai-data-card {
+  background-color: #1f1f1f;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+body.dark-theme .ai-data-card:hover {
+  box-shadow: 0 12px 28px rgba(255, 255, 255, 0.2);
+}
+
+body.dark-theme .ai-data-title {
+  color: #1e90ff;
+}
+
+body.dark-theme .ai-point {
+  background-color: rgba(30, 144, 255, 0.05);
+  border-left-color: #1e90ff;
+  color: #e0e0e0;
+}
+
+body.dark-theme .ai-point:hover {
+  background-color: rgba(30, 144, 255, 0.15);
+}
+
+body.dark-theme .ai-read-more {
+  color: #1e90ff;
+}
+
+body.dark-theme .ai-read-more:hover {
+  color: #63b3ff;
+}

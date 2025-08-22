@@ -1,0 +1,909 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Makes sure video covers full area */
+  z-index: -1;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay for better text visibility */
+}
+
+.hero-overlay h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  animation: fadeInLeft 1s ease-out forwards;
+}
+
+.hero-overlay p {
+  font-size: 1.2rem;
+  animation: fadeInRight 1s ease-out forwards;
+}
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Primary Button */
+.btn {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--scroll-btn-bg);
+  color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--scroll-btn-hover-bg);
+}
+
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-overlay {
+    padding: 0 20px; /* Increased for better spacing */
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hero-overlay h1 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-overlay p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-buttons {
+    max-width: 90%;
+  }
+  .btn {
+    width: 20%;
+    text-align: center;
+    padding: 12px;
+  }
+}
+
+
+
+
+
+
+
+/* Section 2 */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.consultation-section {
+  background-color: #f4f9f9; /* Soft and clean background */
+  padding: 60px 20px;
+  animation: fadeSlideUp 0.8s ease forwards;
+}
+
+.consultation-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.consultation-image img {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow:
+    0 10px 3px 0 rgba(0, 0, 80, 0.8),
+    10px 0 3px 0 rgba(0, 0, 80, 0.8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.consultation-image img:hover {
+  transform: scale(1.03);
+
+}
+
+.consultation-content {
+  flex: 1 1 500px;
+  text-align: justify;
+}
+
+.consultation-content h2 {
+  font-size: 28px;
+  color: #0d1b2a;
+  margin-bottom: 20px;
+}
+
+.consultation-content p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--scroll-btn-bg);
+  color: white;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 3px 10px rgba(0, 35, 102, 0.3);
+  
+}
+
+.cta-btn:hover {
+  background-color: #001a4d; /* Darker blue on hover */
+
+  box-shadow: 0 6px 15px rgba(0, 26, 77, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .consultation-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .consultation-content h2 {
+    font-size: 24px;
+  }
+
+  .consultation-content p {
+    font-size: 15px;
+  }
+
+  .consultation-image img {
+    max-width: 100%;
+    box-shadow:
+      0 6px 0 0 rgba(0, 0, 80, 0.6),
+      6px 0 0 0 rgba(0, 0, 80, 0.6);
+  }
+}
+
+/* DARK MODE */
+.dark-mode .consultation-section {
+  background-color: #121620;
+  padding: 60px 20px;
+  animation: fadeSlideUp 0.8s ease forwards;
+}
+
+.dark-mode .consultation-content h2 {
+  color: #e0e6f1;
+}
+
+.dark-mode .consultation-content p {
+  color: #cbd4e1;
+}
+
+.dark-mode .consultation-image img {
+  box-shadow:
+    0 10px 3px 0 rgba(0, 0, 139, 0.9),
+    10px 0 3px 0 rgba(0, 0, 139, 0.9);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode .consultation-image img:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 15px 8px 0 rgba(0, 0, 200, 0.95),
+    15px 0 8px 0 rgba(0, 0, 200, 0.95);
+}
+
+.dark-mode .cta-btn {
+  background-color: #1a237e;
+  box-shadow: 0 3px 10px rgba(26, 35, 126, 0.5);
+  color: #e0e6f1;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode .cta-btn:hover {
+  background-color: #0d146b;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(13, 20, 107, 0.8);
+}
+
+
+
+
+
+
+
+
+
+/*section 3*/
+.innovative-section {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 10px 20px;
+  text-align: center;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  font-style: italic;
+  color: var(--footer-link);
+  margin-bottom: 20px;
+}
+
+.section-description {
+  font-size: 16px;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.feature-box {
+  background-color: #e6f3ff; /* Light blue background */
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow on hover */
+}
+
+.feature-box h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--footer-link-hover);
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+
+.primary-btn,
+.secondary-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.primary-btn {
+  background-color: var(--scroll-btn-bg);
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: var(--scroll-btn-hover-bg);
+}
+
+.secondary-btn {
+  background-color: transparent;
+  border: 2px solid var(--scroll-btn-bg);
+  color: var(--scroll-btn-bg);
+}
+
+.secondary-btn:hover {
+  background-color: var(--scroll-btn-bg);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 24px;
+  }
+
+  .section-description {
+    font-size: 15px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .feature-box {
+    padding: 16px;
+  }
+
+  .feature-box h4 {
+    font-size: 16px;
+  }
+
+  .features-grid {
+    gap: 20px;
+  }
+}
+/*dark mode styles */
+/* Light mode */
+body:not(.dark) .feature-box {
+  background-color: #e6f3ff;
+  color: #333;
+}
+
+body:not(.dark) .feature-box h4 {
+  color: var(--footer-link-hover);
+}
+
+/* Dark mode */
+body.dark .feature-box {
+  background-color: #1e1e2f;
+  color: #e0e0e0;
+}
+
+body.dark .feature-box h4 {
+  color: #4fc3f7;
+}
+
+
+
+
+
+/*section4*/
+/* In your main CSS (e.g., Home.css or global.css) */
+/* Root color variables (optional if you support dark mode) */
+:root {
+  --zigzag-bg: #f0f4f9;
+  --zigzag-title-color: #0d1b2a;
+  --zigzag-subtitle-color: #555;
+  --bubble-bg: #fff;
+  --bubble-text: #333;
+  --bubble-heading: #002366;
+  --line-color: #002366;
+}
+
+[data-theme="dark"] {
+  --zigzag-bg: #1a1a1a;
+  --zigzag-title-color: #e6e6e6;
+  --zigzag-subtitle-color: #aaa;
+  --bubble-bg: #2b2b2b;
+  --bubble-text: #ddd;
+  --bubble-heading: #4a90e2;
+  --line-color: #4a90e2;
+}
+
+/* Section Container */
+.zigzag-problems-section {
+  background-color: var(--zigzag-bg);
+  padding: 40px 20px;
+}
+
+.zigzag-container {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Title & Subtitle */
+.zigzag-title {
+  font-size: 28px;
+  color: var(--zigzag-title-color);
+  margin-bottom: 8px;
+}
+
+.zigzag-subtitle {
+  font-size: 16px;
+  color: var(--zigzag-subtitle-color);
+  margin-bottom: 36px;
+}
+
+/* Timeline Line */
+.zigzag-line {
+  position: relative;
+  padding-left: 20px;
+}
+
+.zigzag-line::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  right:50%;
+  width: 3px;
+  background-color: var(--line-color);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* Each Zigzag Item */
+.zigzag-item {
+  position: relative;
+  width: 100%;
+  margin-bottom: 36px;
+  z-index: 1;
+}
+
+/* Bubble */
+.zigzag-bubble {
+  background: var(--bubble-bg);
+  border-radius: 16px;
+  padding: 20px 24px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 3px 12px rgba(0, 0, 50, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zigzag-bubble:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 80, 0.15);
+}
+
+/* Headings inside Bubble */
+.zigzag-bubble h4 {
+  color: var(--bubble-heading);
+  font-size: 17px;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+/* Paragraphs inside Bubble */
+.zigzag-bubble p {
+  color: var(--bubble-text);
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+}
+
+/* Alignment (Zigzag alternating layout) */
+.zigzag-item.left .zigzag-bubble {
+  margin-left: -20px;
+  margin-right: auto;
+  text-align: left;
+}
+
+.zigzag-item.right .zigzag-bubble {
+  margin-left: auto;
+  margin-right: 0;
+  text-align: right;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .zigzag-line::before {
+    left: 10px;
+    transform: none;
+  }
+.zigzag-item.left .zigzag-bubble {
+  margin-right: 60px; /* Adjust spacing to match right side */
+}.zigzag-item.right .zigzag-bubble {
+  margin-left: 60px;
+}
+}
+
+
+
+
+
+/*section 5*/
+:root.dark-theme {
+  --heading-color: #ffffff;
+}
+
+.step-content h3 {
+  font-size: 1.3rem;
+  margin: 0 0 6px;
+  color: var(--heading-color);
+}
+
+.consultation-process {
+  padding: 20px 30px;
+  background-color: #f9f9fb;
+  color: #0d1b2a;
+}
+
+.process-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.process-subtitle {
+  text-align: center;
+  font-family: 'roboto';
+  font-size: 1.4rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.step {
+  display: flex;
+  align-items: center; 
+  margin-right: -20px;/* Center vertically */
+  gap: 20px;
+}
+
+.step-number {
+  font-size: 30px;
+  font-weight: bold;
+  color: #20439e;
+  min-width: 40px;
+  display: flex;
+   margin-bottom: -25px;
+  margin-right: -20px;/* Adjust for left alignment */
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+}
+
+.step-content {
+  flex: 1; /* Take available width */
+  text-align: center; /* Center text horizontally */
+}
+
+.step-content h3 {
+  font-size: 1.3rem;
+  margin: 0 0 6px;
+  color: #0d1b2a;
+}
+
+.step-content p {
+  font-size: 1.3rem;
+  color: #444;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .step {
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    text-align: center;
+  }
+
+  .step-number {
+    margin-bottom: 5px;
+  }
+}
+
+[data-theme="dark"] .consultation-process {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+}
+
+[data-theme="dark"] .step-content p,
+[data-theme="dark"] .process-subtitle {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .step-number {
+  color: #7fb3ff;
+}
+
+
+
+
+
+
+
+
+
+
+/*section */
+
+:root {
+  --free-bg-color: #27468d;       /* deep blue */
+  --free-text-color: white;
+  --free-btn-bg: white;
+  --free-btn-color: black;
+  --free-btn-hover-bg: darkblue;
+  --free-btn-hover-color: white;
+}
+
+[data-theme="dark"] {
+  --free-bg-color: #121518;       /* very dark background */
+  --free-text-color: #d1d7e0;     /* lighter text */
+  --free-btn-bg: #333;            /* dark button background */
+  --free-btn-color: #eee;         /* light button text */
+  --free-btn-hover-bg: #0053ba;   /* bright blue hover */
+  --free-btn-hover-color: white;
+}
+.free-consult-section {
+  background-image: url('../images/form.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 20px;
+}
+
+
+
+.free-consult-wrapper {
+  display: flex;
+  flex-direction: column;      /* stack content vertically */
+  justify-content: center;     /* center vertically */
+  align-items: center;         /* center horizontally */
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+  text-align: center;          /* center text */
+}
+
+.free-consult-text {
+  flex: none;                  /* no flex-grow */
+  min-width: 0;                /* prevent overflow */
+  max-width: 400px;            /* optional max width */
+}
+
+.free-consult-text h2 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.free-consult-text p {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin: 5px 0 0 0;
+}
+
+.free-consult-btn {
+  background-color: white;
+  color: black;
+  font-weight: 400;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  white-space: nowrap; /* prevent button text from wrapping */
+  max-width: 300px;    /* optional fixed width */
+  width: 100%;         /* responsive width */
+}
+.free-consult-btn:hover {
+ background-color: transparent;
+  border: 2px solid var(--scroll-btn-bg);
+  color: var(--scroll-btn-bg);
+}
+.free-consult-btn {
+  background-color: darkblue;
+  color: white;
+}
+
+/* Form styles */
+.free-consult-section form {
+  max-width: 400px;
+  margin: 20px auto 0 auto; /* center the form below the section */
+}
+
+.free-consult-section form input,
+.free-consult-section form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.free-consult-section form textarea {
+  resize: vertical;
+}
+
+.free-consult-section form button {
+  width: 100%;
+}
+
+
+
+
+
+
+
+/* Existing styles here: hero, consultation-section, innovative-section, zigzag, steps, free-consult-section, etc. */
+
+/* ——— Mobile-Responsive Overrides ——— */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .hero {
+    height: 60vh;
+  }
+  .hero-overlay h1 {
+    font-size: 1.2rem;
+  }
+  .hero-overlay p {
+    font-size: 0.9rem;
+  }
+  .hero-buttons {
+    max-width: 90%;
+  }
+  .btn {
+    width: 100%;
+  }
+
+  /* Consultation Section */
+  .consultation-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .consultation-content h2 {
+    font-size: 24px;
+  }
+  .consultation-content p {
+    font-size: 15px;
+  }
+  .consultation-image img {
+    max-width: 100%;
+    box-shadow:
+      0 6px 0 0 rgba(0, 0, 80, 0.6),
+      6px 0 0 0 rgba(0, 0, 80, 0.6);
+  }
+
+  /* Innovative Section */
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  .feature-box {
+    padding: 16px;
+  }
+  .feature-box h4 {
+    font-size: 16px;
+  }
+@media (max-width: 768px) {
+  .zigzag-container {
+    padding: 0 15px;
+  }
+
+  .zigzag-line::before {
+    left: 0; /* align the line to the left */
+    right: auto;
+    transform: none;
+  }
+
+  .zigzag-item.left .zigzag-bubble,
+  .zigzag-item.right .zigzag-bubble {
+    margin: 0 auto;
+    text-align: left;
+    max-width: 100%;
+    width: 100%;
+    padding: 16px;
+  }
+
+  .zigzag-bubble {
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .zigzag-title {
+    font-size: 1.5rem;
+  }
+
+  .zigzag-subtitle {
+    font-size: 1rem;
+  }
+}
+
+
+  /* Consultation Process Section */
+  .step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .step-number {
+    margin-bottom: 5px;
+  }
+
+  /* Free Consult Section (full width form and responsive text) */
+  .free-consult-section {
+    padding: 40px 15px;
+    background-attachment: scroll;
+  }
+  .free-consult-wrapper {
+    gap: 16px;
+    padding: 0 10px;
+  }
+  .free-consult-text h2 {
+    font-size: 1.4rem;
+  }
+  .free-consult-text p {
+    font-size: 1rem;
+  }
+  .free-consult-btn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    max-width: 100%;
+    width: 100%;
+  }
+  .free-consult-section form {
+    padding: 0 10px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .free-consult-section form input,
+  .free-consult-section form textarea {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}
+.step4,.step3,.step2{
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+
