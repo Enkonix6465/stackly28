@@ -1,8 +1,12 @@
+/* --- HERO SECTION --- */
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full screen height */
+  height: 100vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-video {
@@ -11,105 +15,126 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Makes sure video covers full area */
-  z-index: -1;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .hero-overlay {
   position: relative;
   z-index: 2;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #fff;
   text-align: center;
   padding: 0 20px;
-  background: rgba(0, 0, 0, 0.4); /* Dark overlay for better text visibility */
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.18) 0%,
+    rgba(0,0,0,0.08) 60%,
+    rgba(0,0,0,0.04) 100%
+  ); /* Subtle gradient overlay for readability */
 }
 
 .hero-overlay h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.25);
   animation: fadeInLeft 1s ease-out forwards;
 }
 
 .hero-overlay p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.18);
   animation: fadeInRight 1s ease-out forwards;
 }
+
 .hero-buttons {
   display: flex;
-  gap: 15px;
+  gap: 18px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 /* Primary Button */
 .btn {
-  padding: 12px 25px;
-  font-size: 1rem;
-  border-radius: 20px;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  border-radius: 24px;
   border: none;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: background 0.3s, box-shadow 0.3s;
+  background: #1565c0;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(21,101,192,0.15);
 }
 
 .btn-primary {
-  background-color: var(--scroll-btn-bg);
-  color: white;
+  background: #1976d2;
 }
 
 .btn-primary:hover {
-    background-color: var(--scroll-btn-hover-bg);
+  background: #0d47a1;
+  box-shadow: 0 4px 16px rgba(21,101,192,0.25);
 }
 
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-overlay h1 {
+    font-size: 2.2rem;
+  }
+  .hero-overlay p {
+    font-size: 1.1rem;
+  }
+  .btn {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+}
 
-/* Mobile view */
 @media (max-width: 768px) {
   .hero {
     height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: 350px;
   }
-
-  .hero-overlay {
-    padding: 0 20px; /* Increased for better spacing */
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
   .hero-overlay h1 {
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin-bottom: 10px;
   }
-
   .hero-overlay p {
-    font-size: 0.9rem;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    margin-bottom: 18px;
   }
-
   .hero-buttons {
-    display: flex;
-    flex-direction: column;
     gap: 10px;
-    width: 50%;
+    margin-top: 12px;
   }
-
   .btn {
-    width: 20%;
-    text-align: center;
-    padding: 12px;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 0.95rem;
+    border-radius: 18px;
   }
 }
 
-
-
-
+/* Animation Keyframes */
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-30px);}
+  100% { opacity: 1; transform: translateX(0);}
+}
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(30px);}
+  100% { opacity: 1; transform: translateX(0);}
+}
 
 /*section2*/
 
@@ -442,6 +467,12 @@
   color: #ccc;
 }
 
+/* Make timeline step headings white in dark mode */
+.dark-mode .timeline-step h3 {
+  color: #fff !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
 
 
 
@@ -746,4 +777,24 @@
   .timeline-step p {
     font-size: 1rem;
   }
+}
+
+/* Ensure all sections and their containers use the same background in dark mode */
+.dark-mode section,
+.dark-mode .flip-section,
+.dark-mode .partners-section,
+.dark-mode .work-process-section,
+.dark-mode .business-solutions,
+.dark-mode .achievement-section,
+.dark-mode .container {
+  background: #181818 !important;
+  color: #fff !important;
+}
+
+/* Remove heading backgrounds in dark mode */
+.dark-mode .flip-section-heading,
+.dark-mode .partners-title,
+.dark-mode .section-title {
+  background: transparent !important;
+  color: #fff !important;
 }

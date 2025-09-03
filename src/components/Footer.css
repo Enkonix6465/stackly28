@@ -144,6 +144,13 @@ html[data-theme='dark'] {
   padding-right: 40px;  /* Increase right padding */
 }
 
+/* Use same dark background for all footer sections in dark mode */
+html[data-theme='dark'] .footer,
+html[data-theme='dark'] .footer-bottom,
+html[data-theme='dark'] .footer-container {
+  background-color: #181818 !important;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .footer-container {

@@ -18,6 +18,135 @@ const logos = [
   { src: logo5, alt: "Logo 5" },
 ];
 
+// Translations object
+const translations = {
+  en: {
+    heroTitle: "Driving Success Through Insightful Solutions.",
+    heroDesc: "Partnering with you to transform challenges into opportunities.",
+    offerTitle: "What We Offer",
+    itConsulting: "IT Consulting",
+    itConsultingDesc: "Our IT consulting team will provide you with the highly available technology platform that you need.",
+    cybersecurity: "Cybersecurity Consulting",
+    cybersecurityDesc: "Protect your digital assets with end-to-end cybersecurity strategies, threat monitoring, and compliance support.",
+    marketing: "Marketing",
+    marketingDesc: "Increase your business presence and generate leads with AI-powered Digital Marketing, Ads & SEO.",
+    dataAnalytics: "Data Analytics",
+    dataAnalyticsDesc: "Unlock actionable insights from your data using advanced analytics, dashboards, and AI-driven reporting tools.",
+    iotai: "IoT & AI",
+    iotaiDesc: "Our AI-based IoT solutions use machine learning for risk reduction, efficiency & cost savings.",
+    cloudServices: "Cloud Services",
+    cloudServicesDesc: "Modernize your infrastructure with scalable, secure, and cost-effective cloud solutions tailored to your business needs.",
+    partnersTitle: "Our Network of Trusted Property Partners",
+    partnersSubtitle: "We collaborate with top developers, builders, and property consultants to bring you premium real estate opportunities.",
+    workApproach: "Our Work Approach",
+    workSubtitle: "A streamlined process designed to deliver quality results efficiently",
+    discovery: "Initial Discovery",
+    discoveryDesc: "We begin by understanding your business goals and requirements to tailor the best solution.",
+    planning: "Planning & Strategy",
+    planningDesc: "Our team crafts a detailed project plan and roadmap aligned with your objectives.",
+    development: "Development & Testing",
+    developmentDesc: "We develop robust software with continuous testing to ensure high quality and reliability.",
+    launch: "Launch & Support",
+    launchDesc: "After deployment, we provide ongoing support to ensure smooth operation and improvements.",
+    achievements: "Our Achievements",
+    happyClients: "Happy Clients",
+    projectsCompleted: "Projects Completed",
+    industriesServed: "Industries Served",
+    yearsExperience: "Years of Experience",
+    businessSolutions: "Tailored Business Solutions",
+    businessDesc: "We don’t offer one-size-fits-all. Our consultation services are customized to your business goals, challenges, and industry.",
+    strategy: "Strategy & Growth Consulting",
+    processOpt: "Business Process Optimization",
+    digitalTrans: "Digital Transformation Advisory",
+    marketEntry: "Market Entry & Expansion Plans",
+    getConsult: "Get Free Consultation"
+  },
+  ar: {
+    heroTitle: "قيادة النجاح من خلال حلول مدروسة.",
+    heroDesc: "نتعاون معك لتحويل التحديات إلى فرص.",
+    offerTitle: "ماذا نقدم",
+    itConsulting: "استشارات تقنية المعلومات",
+    itConsultingDesc: "سيقدم لك فريق استشارات تقنية المعلومات لدينا منصة تقنية عالية التوافر تحتاجها.",
+    cybersecurity: "استشارات الأمن السيبراني",
+    cybersecurityDesc: "احمِ أصولك الرقمية باستراتيجيات أمن سيبراني شاملة، ومراقبة التهديدات، ودعم الامتثال.",
+    marketing: "التسويق",
+    marketingDesc: "زد من حضور عملك وحقق المزيد من العملاء المحتملين من خلال التسويق الرقمي المدعوم بالذكاء الاصطناعي والإعلانات وتحسين محركات البحث.",
+    dataAnalytics: "تحليل البيانات",
+    dataAnalyticsDesc: "اكتشف رؤى قابلة للتنفيذ من بياناتك باستخدام التحليلات المتقدمة ولوحات المعلومات وأدوات التقارير المدعومة بالذكاء الاصطناعي.",
+    iotai: "إنترنت الأشياء والذكاء الاصطناعي",
+    iotaiDesc: "تستخدم حلول إنترنت الأشياء المدعومة بالذكاء الاصطناعي لدينا التعلم الآلي لتقليل المخاطر وزيادة الكفاءة وتوفير التكاليف.",
+    cloudServices: "خدمات السحابة",
+    cloudServicesDesc: "حدث بنيتك التحتية بحلول سحابية قابلة للتوسع وآمنة وفعالة من حيث التكلفة ومصممة خصيصًا لاحتياجات عملك.",
+    partnersTitle: "شبكة شركائنا الموثوقين في العقارات",
+    partnersSubtitle: "نتعاون مع أفضل المطورين والبنائين ومستشاري العقارات لتقديم فرص عقارية مميزة.",
+    workApproach: "نهج عملنا",
+    workSubtitle: "عملية مبسطة مصممة لتقديم نتائج عالية الجودة بكفاءة",
+    discovery: "الاكتشاف الأولي",
+    discoveryDesc: "نبدأ بفهم أهداف عملك واحتياجاتك لتقديم أفضل حل.",
+    planning: "التخطيط والاستراتيجية",
+    planningDesc: "يصمم فريقنا خطة مشروع مفصلة وخريطة طريق تتماشى مع أهدافك.",
+    development: "التطوير والاختبار",
+    developmentDesc: "نطور برامج قوية مع اختبارات مستمرة لضمان الجودة العالية والموثوقية.",
+    launch: "الإطلاق والدعم",
+    launchDesc: "بعد النشر، نقدم دعمًا مستمرًا لضمان التشغيل السلس والتحسينات.",
+    achievements: "إنجازاتنا",
+    happyClients: "عملاء سعداء",
+    projectsCompleted: "المشاريع المنجزة",
+    industriesServed: "الصناعات المخدومة",
+    yearsExperience: "سنوات الخبرة",
+    businessSolutions: "حلول أعمال مخصصة",
+    businessDesc: "لا نقدم حلولًا موحدة. خدمات الاستشارات لدينا مخصصة لأهداف عملك وتحدياتك وصناعتك.",
+    strategy: "استشارات الاستراتيجية والنمو",
+    processOpt: "تحسين العمليات التجارية",
+    digitalTrans: "استشارات التحول الرقمي",
+    marketEntry: "خطط دخول السوق والتوسع",
+    getConsult: "احصل على استشارة مجانية"
+  },
+  he: {
+    heroTitle: "הצלחה מונעת באמצעות פתרונות תובנתיים.",
+    heroDesc: "שותפים איתך להפוך אתגרים להזדמנויות.",
+    offerTitle: "מה אנחנו מציעים",
+    itConsulting: "ייעוץ IT",
+    itConsultingDesc: "צוות הייעוץ שלנו יספק לך את פלטפורמת הטכנולוגיה הזמינה שאתה צריך.",
+    cybersecurity: "ייעוץ סייבר",
+    cybersecurityDesc: "הגן על הנכסים הדיגיטליים שלך עם אסטרטגיות סייבר מקיפות, ניטור איומים ותמיכה ברגולציה.",
+    marketing: "שיווק",
+    marketingDesc: "הגדל את הנוכחות העסקית שלך וייצר לידים עם שיווק דיגיטלי מבוסס AI, פרסום וקידום אתרים.",
+    dataAnalytics: "אנליטיקת נתונים",
+    dataAnalyticsDesc: "גלה תובנות מהנתונים שלך באמצעות אנליטיקות מתקדמות, לוחות מחוונים וכלי דיווח מבוססי AI.",
+    iotai: "IoT ובינה מלאכותית",
+    iotaiDesc: "הפתרונות שלנו מבוססי AI ו-IoT משתמשים בלמידת מכונה להפחתת סיכונים, יעילות וחיסכון בעלויות.",
+    cloudServices: "שירותי ענן",
+    cloudServicesDesc: "חדש את התשתית שלך עם פתרונות ענן סקלאביליים, מאובטחים ומשתלמים המותאמים לעסק שלך.",
+    partnersTitle: "רשת שותפי הנדל\"ן המהימנים שלנו",
+    partnersSubtitle: "אנו משתפים פעולה עם מפתחים, בונים ויועצי נדל\"ן מובילים כדי להביא לך הזדמנויות נדל\"ן פרימיום.",
+    workApproach: "הגישה שלנו לעבודה",
+    workSubtitle: "תהליך ממוקד תוצאה שנועד לספק תוצאות איכותיות ביעילות",
+    discovery: "גילוי ראשוני",
+    discoveryDesc: "מתחילים בהבנת מטרות העסק שלך ודרישותיך כדי להתאים את הפתרון הטוב ביותר.",
+    planning: "תכנון ואסטרטגיה",
+    planningDesc: "הצוות שלנו בונה תוכנית פרויקט מפורטת ומפת דרכים התואמת את יעדיך.",
+    development: "פיתוח ובדיקות",
+    developmentDesc: "מפתחים תוכנה חזקה עם בדיקות מתמשכות להבטחת איכות גבוהה ואמינות.",
+    launch: "השקה ותמיכה",
+    launchDesc: "לאחר ההשקה, אנו מספקים תמיכה שוטפת להבטחת פעולה חלקה ושיפורים.",
+    achievements: "ההישגים שלנו",
+    happyClients: "לקוחות מרוצים",
+    projectsCompleted: "פרויקטים שהושלמו",
+    industriesServed: "ענפים בהם פעלנו",
+    yearsExperience: "שנות ניסיון",
+    businessSolutions: "פתרונות עסקיים מותאמים אישית",
+    businessDesc: "אנו לא מציעים פתרון אחד לכולם. שירותי הייעוץ שלנו מותאמים למטרות, אתגרים וענף העסק שלך.",
+    strategy: "ייעוץ אסטרטגיה וצמיחה",
+    processOpt: "ייעול תהליכים עסקיים",
+    digitalTrans: "ייעוץ טרנספורמציה דיגיטלית",
+    marketEntry: "תוכניות כניסה לשוק והתרחבות",
+    getConsult: "קבל ייעוץ חינם"
+  }
+};
+
+const getLanguage = () => localStorage.getItem("language") || "en";
+
 function formatNumber(num, suffix) {
   if (suffix === "K") {
     return (num / 1000).toFixed(1) + "K";
@@ -32,6 +161,13 @@ function Home2() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { darkMode } = useDarkMode();
   const countersRef = useRef([]);
+  const [language, setLanguage] = useState(getLanguage());
+
+  useEffect(() => {
+    const handleLanguageChange = () => setLanguage(getLanguage());
+    window.addEventListener("languageChanged", handleLanguageChange);
+    return () => window.removeEventListener("languageChanged", handleLanguageChange);
+  }, []);
 
   useEffect(() => {
     const counters = countersRef.current;
@@ -73,13 +209,12 @@ function Home2() {
 
     if ("IntersectionObserver" in window) {
       observer = new IntersectionObserver(handleIntersection, {
-        threshold: 0.5, // Trigger when 50% of counter visible
+        threshold: 0.5,
       });
       counters.forEach((counter) => {
         if (counter) observer.observe(counter);
       });
     } else {
-      // Fallback if IntersectionObserver not supported
       counters.forEach((counter) => {
         startCounting(counter);
       });
@@ -89,6 +224,8 @@ function Home2() {
       if (observer) observer.disconnect();
     };
   }, []);
+
+  const t = translations[language];
 
   return (
     <div className={darkMode ? "dark-mode" : "light-mode"}>
@@ -103,32 +240,26 @@ function Home2() {
           playsInline
         />
         <div className="hero-overlay">
-          <h1>Driving Success Through Insightful Solutions.</h1>
-          <p>Partnering with you to transform challenges into opportunities.</p>
+          <h1>{t.heroTitle}</h1>
+          <p>{t.heroDesc}</p>
         </div>
       </section>
 
       {/* FLIP SECTION */}
       <section className="flip-section">
         <div>
-          <h2 className="flip-section-heading">What We Offer</h2>
+          <h2 className="flip-section-heading">{t.offerTitle}</h2>
           <div className="flip-box-container">
             {/* IT Consulting */}
             <div className="flip-box">
               <div className="flip-box-inner">
                 <div className="flip-box-front green">
-                  <h3>IT Consulting</h3>
-                  <p>
-                    Our IT consulting team will provide you with the highly
-                    available technology platform that you need.
-                  </p>
+                  <h3>{t.itConsulting}</h3>
+                  <p>{t.itConsultingDesc}</p>
                 </div>
                 <div className="flip-box-back">
-                  <h3>Cybersecurity Consulting</h3>
-                  <p>
-                    Protect your digital assets with end-to-end cybersecurity
-                    strategies, threat monitoring, and compliance support.
-                  </p>
+                  <h3>{t.cybersecurity}</h3>
+                  <p>{t.cybersecurityDesc}</p>
                 </div>
               </div>
             </div>
@@ -137,18 +268,12 @@ function Home2() {
             <div className="flip-box">
               <div className="flip-box-inner">
                 <div className="flip-box-front pink">
-                  <h3>Marketing</h3>
-                  <p>
-                    Increase your business presence and generate leads with
-                    AI-powered Digital Marketing, Ads & SEO.
-                  </p>
+                  <h3>{t.marketing}</h3>
+                  <p>{t.marketingDesc}</p>
                 </div>
                 <div className="flip-box-back">
-                  <h3>Data Analytics</h3>
-                  <p>
-                    Unlock actionable insights from your data using advanced
-                    analytics, dashboards, and AI-driven reporting tools.
-                  </p>
+                  <h3>{t.dataAnalytics}</h3>
+                  <p>{t.dataAnalyticsDesc}</p>
                 </div>
               </div>
             </div>
@@ -157,19 +282,12 @@ function Home2() {
             <div className="flip-box">
               <div className="flip-box-inner">
                 <div className="flip-box-front blue">
-                  <h3>IoT & AI</h3>
-                  <p>
-                    Our AI-based IoT solutions use machine learning for risk
-                    reduction, efficiency & cost savings.
-                  </p>
+                  <h3>{t.iotai}</h3>
+                  <p>{t.iotaiDesc}</p>
                 </div>
                 <div className="flip-box-back">
-                  <h3>Cloud Services</h3>
-                  <p>
-                    Modernize your infrastructure with scalable, secure, and
-                    cost-effective cloud solutions tailored to your business
-                    needs.
-                  </p>
+                  <h3>{t.cloudServices}</h3>
+                  <p>{t.cloudServicesDesc}</p>
                 </div>
               </div>
             </div>
@@ -180,13 +298,8 @@ function Home2() {
       {/* PARTNERS SECTION */}
       <section className="partners-section">
         <div className="container">
-          <h2 className="partners-title">
-            Our Network of Trusted Property Partners
-          </h2>
-          <p className="partners-subtitle">
-            We collaborate with top developers, builders, and property
-            consultants to bring you premium real estate opportunities.
-          </p>
+          <h2 className="partners-title">{t.partnersTitle}</h2>
+          <p className="partners-subtitle">{t.partnersSubtitle}</p>
 
           <div className="partners-slider" style={{ overflow: "hidden" }}>
             <div className="partner-logos-slider">
@@ -217,46 +330,32 @@ function Home2() {
 
       {/* WORK PROCESS SECTION */}
       <section className="work-process-section">
-        <h2 className="section-title">Our Work Approach</h2>
-        <p className="section-subtitle">
-          A streamlined process designed to deliver quality results efficiently
-        </p>
+        <h2 className="section-title">{t.workApproach}</h2>
+        <p className="section-subtitle">{t.workSubtitle}</p>
 
         <div className="timeline">
           <div className="timeline-step">
             <div className="icon-circle">🔍</div>
-            <h3>Initial Discovery</h3>
-            <p>
-              We begin by understanding your business goals and requirements to
-              tailor the best solution.
-            </p>
+            <h3>{t.discovery}</h3>
+            <p>{t.discoveryDesc}</p>
           </div>
 
           <div className="timeline-step">
             <div className="icon-circle">📝</div>
-            <h3>Planning & Strategy</h3>
-            <p>
-              Our team crafts a detailed project plan and roadmap aligned with
-              your objectives.
-            </p>
+            <h3>{t.planning}</h3>
+            <p>{t.planningDesc}</p>
           </div>
 
           <div className="timeline-step">
             <div className="icon-circle">⚙️</div>
-            <h3>Development & Testing</h3>
-            <p>
-              We develop robust software with continuous testing to ensure high
-              quality and reliability.
-            </p>
+            <h3>{t.development}</h3>
+            <p>{t.developmentDesc}</p>
           </div>
 
           <div className="timeline-step">
             <div className="icon-circle">🚀</div>
-            <h3>Launch & Support</h3>
-            <p>
-              After deployment, we provide ongoing support to ensure smooth
-              operation and improvements.
-            </p>
+            <h3>{t.launch}</h3>
+            <p>{t.launchDesc}</p>
           </div>
         </div>
       </section>
@@ -264,7 +363,7 @@ function Home2() {
       {/* ACHIEVEMENTS SECTION */}
       <section className="achievement-section">
         <div>
-          <h2>Our Achievements</h2>
+          <h2>{t.achievements}</h2>
           <div className="achievement-container">
             <div className="achievement-box">
               <h2
@@ -275,7 +374,7 @@ function Home2() {
               >
                 0
               </h2>
-              <p>Happy Clients</p>
+              <p>{t.happyClients}</p>
             </div>
             <div className="achievement-box">
               <h2
@@ -286,7 +385,7 @@ function Home2() {
               >
                 0
               </h2>
-              <p>Projects Completed</p>
+              <p>{t.projectsCompleted}</p>
             </div>
             <div className="achievement-box">
               <h2
@@ -297,7 +396,7 @@ function Home2() {
               >
                 0
               </h2>
-              <p>Industries Served</p>
+              <p>{t.industriesServed}</p>
             </div>
             <div className="achievement-box">
               <h2
@@ -308,40 +407,35 @@ function Home2() {
               >
                 0
               </h2>
-              <p>Years of Experience</p>
+              <p>{t.yearsExperience}</p>
             </div>
           </div>
         </div>
       </section>
 
-    
-    
       {/* BUSINESS SOLUTIONS SECTION */}
       <section className="business-solutions">
         <div className="solutions-container">
           <div className="solutions-left">
-            <h2>Tailored Business Solutions</h2>
-            <p>
-              We don’t offer one-size-fits-all. Our consultation services are
-              customized to your business goals, challenges, and industry.
-            </p>
+            <h2>{t.businessSolutions}</h2>
+            <p>{t.businessDesc}</p>
             <ul className="solution-list">
               <li>
-                <span>📊</span> Strategy & Growth Consulting
+                <span>📊</span> {t.strategy}
               </li>
               <li>
-                <span>🧠</span> Business Process Optimization
+                <span>🧠</span> {t.processOpt}
               </li>
               <li>
-                <span>💻</span> Digital Transformation Advisory
+                <span>💻</span> {t.digitalTrans}
               </li>
               <li>
-                <span>🌐</span> Market Entry & Expansion Plans
+                <span>🌐</span> {t.marketEntry}
               </li>
             </ul>
             <Link to="/contact" className="btn primary">
-  Get Free Consultation
-</Link>
+              {t.getConsult}
+            </Link>
           </div>
           <div className="solutions-right">
             <img src={businessImg} alt="Business Consultation" />

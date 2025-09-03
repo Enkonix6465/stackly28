@@ -3,11 +3,14 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Header.css";
 import logo from "../images/logo.png";
 
+const getInitialLanguage = () => localStorage.getItem("language") || "en";
+
 const Header = ({ toggleTheme, isDark }) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [initials, setInitials] = useState("");
   const [avatarDropdownOpen, setAvatarDropdownOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [language, setLanguage] = useState(getInitialLanguage()); // <-- initialize from localStorage
   const avatarRef = useRef(null);
 
   const navigate = useNavigate();
@@ -55,6 +58,15 @@ const Header = ({ toggleTheme, isDark }) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [mobileNavOpen]);
+
+  useEffect(() => {
+    localStorage.setItem("language", language); // <-- keep localStorage updated
+    if (language === "ar" || language === "he") {
+      document.documentElement.setAttribute("dir", "rtl");
+    } else {
+      document.documentElement.setAttribute("dir", "ltr");
+    }
+  }, [language]);
 
   const toggleDropdown = (menu) => {
     setActiveDropdown(prev => (prev === menu ? null : menu));
@@ -106,6 +118,60 @@ const Header = ({ toggleTheme, isDark }) => {
     setMobileNavOpen(prev => !prev);
   };
 
+  const languageNames = {
+    en: "English",
+    ar: "العربية",
+    he: "עברית"
+  };
+
+  const translations = {
+    en: {
+      home: "Home",
+      home2: "Home 2",
+      about: "About Us",
+      services: "Services",
+      outsourcing: "Outsourcing of talent",
+      mobileapps: "Mobile Apps Development",
+      websiteservice: "Website Maintance Service",
+      digitalstratagy: "Digital Strategy Consulting",
+      cloudintegration: "Cloud Integration",
+      customersolutions: "Customer Experience Solutions",
+      blog: "Blog",
+      contact: "Contact Us",
+      logout: "Logout"
+    },
+    ar: {
+      home: "الرئيسية",
+      home2: "الرئيسية 2",
+      about: "معلومات عنا",
+      services: "الخدمات",
+      outsourcing: "الاستعانة بالمواهب",
+      mobileapps: "تطوير تطبيقات الجوال",
+      websiteservice: "خدمة صيانة الموقع",
+      digitalstratagy: "استشارات الاستراتيجية الرقمية",
+      cloudintegration: "تكامل السحابة",
+      customersolutions: "حلول تجربة العملاء",
+      blog: "مدونة",
+      contact: "اتصل بنا",
+      logout: "تسجيل خروج"
+    },
+    he: {
+      home: "בית",
+      home2: "בית 2",
+      about: "אודותינו",
+      services: "שירותים",
+      outsourcing: "מיקור כישרונות",
+      mobileapps: "פיתוח אפליקציות מובייל",
+      websiteservice: "שירות תחזוקת אתר",
+      digitalstratagy: "ייעוץ אסטרטגיה דיגיטלית",
+      cloudintegration: "אינטגרציית ענן",
+      customersolutions: "פתרונות חווית לקוח",
+      blog: "בלוג",
+      contact: "צור קשר",
+      logout: "התנתק"
+    }
+  };
+
   return (
     <header className="header">
       <nav className="logo">
@@ -130,7 +196,7 @@ const Header = ({ toggleTheme, isDark }) => {
             className={`nav-link ${activeLink === "home" ? "active" : ""}`}
             onClick={() => handleMainClick("home")}
           >
-            Home
+            {translations[language].home}
           </span>
           <span
             className={`arrow ${activeDropdown === "home" ? "open" : ""}`}
@@ -140,8 +206,8 @@ const Header = ({ toggleTheme, isDark }) => {
           </span>
           {activeDropdown === "home" && (
             <div className="dropdown">
-              <Link to="/home" onClick={handleLinkClick}>Home</Link>
-              <Link to="/home2" onClick={handleLinkClick}>Home 2</Link>
+              <Link to="/home" onClick={handleLinkClick}>{translations[language].home}</Link>
+              <Link to="/home2" onClick={handleLinkClick}>{translations[language].home2}</Link>
             </div>
           )}
         </div>
@@ -151,7 +217,7 @@ const Header = ({ toggleTheme, isDark }) => {
           className={`nav-link ${activeLink === "about" ? "active" : ""}`}
           onClick={handleLinkClick}
         >
-          About Us
+          {translations[language].about}
         </Link>
 
         <div className="nav-item">
@@ -159,7 +225,7 @@ const Header = ({ toggleTheme, isDark }) => {
             className={`nav-link ${activeLink === "services" ? "active" : ""}`}
             onClick={() => handleMainClick("services")}
           >
-            Services
+            {translations[language].services}
           </span>
           <span
             className={`arrow ${activeDropdown === "services" ? "open" : ""}`}
@@ -169,12 +235,12 @@ const Header = ({ toggleTheme, isDark }) => {
           </span>
           {activeDropdown === "services" && (
             <div className="dropdown">
-              <Link to="/outsourcing" onClick={handleLinkClick}>Outsourcing of talent</Link>
-              <Link to="/mobileapps" onClick={handleLinkClick}>Mobile Apps Development</Link>
-              <Link to="/websiteservice" onClick={handleLinkClick}>Website Maintance Service</Link>
-              <Link to="/digitalstratagy" onClick={handleLinkClick}>Digital Strategy Consulting</Link>
-              <Link to="/cloudintegration" onClick={handleLinkClick}>Cloud Integration</Link>
-              <Link to="/customersolutions" onClick={handleLinkClick}>Customer Experience Solutions</Link>
+              <Link to="/outsourcing" onClick={handleLinkClick}>{translations[language].outsourcing}</Link>
+              <Link to="/mobileapps" onClick={handleLinkClick}>{translations[language].mobileapps}</Link>
+              <Link to="/websiteservice" onClick={handleLinkClick}>{translations[language].websiteservice}</Link>
+              <Link to="/digitalstratagy" onClick={handleLinkClick}>{translations[language].digitalstratagy}</Link>
+              <Link to="/cloudintegration" onClick={handleLinkClick}>{translations[language].cloudintegration}</Link>
+              <Link to="/customersolutions" onClick={handleLinkClick}>{translations[language].customersolutions}</Link>
             </div>
           )}
         </div>
@@ -184,7 +250,7 @@ const Header = ({ toggleTheme, isDark }) => {
           className={`nav-link ${activeLink === "blog" ? "active" : ""}`}
           onClick={handleLinkClick}
         >
-          Blog
+          {translations[language].blog}
         </Link>
 
         <Link
@@ -192,11 +258,31 @@ const Header = ({ toggleTheme, isDark }) => {
           className={`nav-link ${activeLink === "contact" ? "active" : ""}`}
           onClick={handleLinkClick}
         >
-          Contact Us
+          {translations[language].contact}
         </Link>
       </nav>
 
       <div className="rightSection">
+        {/* RTL Toggle Button */}
+        <select
+          className="rtlToggle"
+          value={language}
+          onChange={e => {
+            setLanguage(e.target.value);
+            localStorage.setItem("language", e.target.value);
+            window.dispatchEvent(new Event("languageChanged")); // <-- Add this line
+          }}
+          style={{ marginRight: "10px", padding: "5px" }}
+          aria-label="Select language direction"
+        >
+          <option value="en">English</option>
+          <option value="ar">العربية</option>
+          <option value="he">עברית</option>
+        </select>
+        <span style={{ marginRight: "10px", fontWeight: "bold" }}>
+          {languageNames[language]}
+        </span>
+
         <button className="themeToggle" onClick={toggleTheme}>
           {isDark ? "🌙" : "🌞"}
         </button>
@@ -238,7 +324,7 @@ const Header = ({ toggleTheme, isDark }) => {
                   fontSize: "14px",
                 }}
               >
-                Logout
+                {translations[language].logout}
               </button>
             </div>
           )}

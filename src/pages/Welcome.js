@@ -1,9 +1,92 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import login from "../images/login.jpg";
 
+// Translations object
+const translations = {
+  en: {
+    welcome: "Welcome to",
+    stackly: "STACKLY",
+    welcomeBack: "Welcome back, Please login into an account",
+    username: "Your Username",
+    password: "Enter Password",
+    forgotPassword: "Forgot password?",
+    login: "Login",
+    dontHaveAccount: "Don't have an account? Sign Up",
+    firstName: "First Name",
+    lastName: "Last Name",
+    signUp: "Sign Up",
+    alreadyHaveAccount: "Already have an account? Login",
+    resetPassword: "Reset Password",
+    enterRegisteredEmail: "Enter your registered email",
+    sendResetLink: "Send Reset Link",
+    backToLogin: "Back to Login",
+    invalid: "Invalid email or password.",
+    userExists: "User already exists with this email.",
+    signupSuccess: "Signup successful! Please login.",
+    noUser: "No user found with this email.",
+    resetMsg: "User found. Please check your email for password reset instructions. (Simulation)"
+  },
+  ar: {
+    welcome: "مرحبًا في",
+    stackly: "STACKLY",
+    welcomeBack: "مرحبًا بعودتك، يرجى تسجيل الدخول إلى حسابك",
+    username: "اسم المستخدم",
+    password: "أدخل كلمة المرور",
+    forgotPassword: "نسيت كلمة المرور؟",
+    login: "تسجيل الدخول",
+    dontHaveAccount: "ليس لديك حساب؟ سجل الآن",
+    firstName: "الاسم الأول",
+    lastName: "اسم العائلة",
+    signUp: "سجل",
+    alreadyHaveAccount: "لديك حساب بالفعل؟ تسجيل الدخول",
+    resetPassword: "إعادة تعيين كلمة المرور",
+    enterRegisteredEmail: "أدخل بريدك الإلكتروني المسجل",
+    sendResetLink: "إرسال رابط إعادة التعيين",
+    backToLogin: "العودة لتسجيل الدخول",
+    invalid: "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+    userExists: "يوجد مستخدم بهذا البريد الإلكتروني.",
+    signupSuccess: "تم التسجيل بنجاح! يرجى تسجيل الدخول.",
+    noUser: "لا يوجد مستخدم بهذا البريد الإلكتروني.",
+    resetMsg: "تم العثور على المستخدم. يرجى التحقق من بريدك الإلكتروني لإعادة تعيين كلمة المرور. (محاكاة)"
+  },
+  he: {
+    welcome: "ברוכים הבאים ל",
+    stackly: "STACKLY",
+    welcomeBack: "ברוך שובך, אנא התחבר לחשבון",
+    username: "שם משתמש",
+    password: "הזן סיסמה",
+    forgotPassword: "שכחת סיסמה?",
+    login: "התחבר",
+    dontHaveAccount: "אין לך חשבון? הרשמה",
+    firstName: "שם פרטי",
+    lastName: "שם משפחה",
+    signUp: "הרשמה",
+    alreadyHaveAccount: "כבר יש לך חשבון? התחבר",
+    resetPassword: "איפוס סיסמה",
+    enterRegisteredEmail: "הזן את האימייל הרשום שלך",
+    sendResetLink: "שלח קישור לאיפוס",
+    backToLogin: "חזרה להתחברות",
+    invalid: "אימייל או סיסמה שגויים.",
+    userExists: "משתמש כבר קיים עם אימייל זה.",
+    signupSuccess: "ההרשמה הצליחה! אנא התחבר.",
+    noUser: "לא נמצא משתמש עם אימייל זה.",
+    resetMsg: "משתמש נמצא. בדוק את האימייל שלך להוראות איפוס סיסמה. (סימולציה)"
+  }
+};
+
+const getLanguage = () => localStorage.getItem("language") || "en";
+
 const Welcome = () => {
   const navigate = useNavigate();
+  const [language, setLanguage] = useState(getLanguage());
+  const t = translations[language];
+
+  useEffect(() => {
+    const handleLanguageChange = () => setLanguage(getLanguage());
+    window.addEventListener("languageChanged", handleLanguageChange);
+    return () => window.removeEventListener("languageChanged", handleLanguageChange);
+  }, []);
 
   const [loginData, setLoginData] = useState({ email: "", password: "" });
   const [signUpData, setSignUpData] = useState({
@@ -48,7 +131,7 @@ const Welcome = () => {
       localStorage.setItem("userLogins", JSON.stringify(logins));
       navigate("/home");
     } else {
-      setError("Invalid email or password.");
+      setError(t.invalid);
     }
   };
 
@@ -61,14 +144,14 @@ const Welcome = () => {
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
     if (users.find((user) => user.email === signUpData.email)) {
-      setError("User already exists with this email.");
+      setError(t.userExists);
       return;
     }
 
     users.push(signUpData);
     localStorage.setItem("users", JSON.stringify(users));
     setError("");
-    alert("Signup successful! Please login.");
+    alert(t.signupSuccess);
     setSignUpData({ firstName: "", lastName: "", email: "", password: "" });
     setIsLogin(true);
   };
@@ -84,13 +167,11 @@ const Welcome = () => {
     const user = users.find((user) => user.email === forgotEmail);
 
     if (!user) {
-      setError("No user found with this email.");
+      setError(t.noUser);
       setResetMessage("");
     } else {
       setError("");
-      setResetMessage(
-        "User found. Please check your email for password reset instructions. (Simulation)"
-      );
+      setResetMessage(t.resetMsg);
     }
   };
 
@@ -171,10 +252,10 @@ const Welcome = () => {
           {!isForgotPassword ? (
             <>
               <h1 style={styles.welcomeHeading}>
-                Welcome to <span style={styles.highlight}>STACKLY</span>
+                {t.welcome} <span style={styles.highlight}>{t.stackly}</span>
               </h1>
               <p style={styles.welcomeSubtext}>
-                Welcome back, Please login into an account
+                {t.welcomeBack}
               </p>
 
               {isLogin ? (
@@ -183,7 +264,7 @@ const Welcome = () => {
                     style={styles.input}
                     type="email"
                     name="email"
-                    placeholder="Your Username"
+                    placeholder={t.username}
                     value={loginData.email}
                     onChange={handleLoginChange}
                     required
@@ -192,7 +273,7 @@ const Welcome = () => {
                     style={styles.input}
                     type="password"
                     name="password"
-                    placeholder="Enter Password"
+                    placeholder={t.password}
                     value={loginData.password}
                     onChange={handleLoginChange}
                     required
@@ -205,10 +286,10 @@ const Welcome = () => {
                       setResetMessage("");
                     }}
                   >
-                    Forgot password?
+                    {t.forgotPassword}
                   </p>
                   <button type="submit" style={styles.loginButton}>
-                    <span role="img" aria-label="user-lock" style={{ marginRight: 8 }}>👤🔒</span> Login
+                    <span role="img" aria-label="user-lock" style={{ marginRight: 8 }}>👤🔒</span> {t.login}
                   </button>
                   <p
                     style={styles.toggle}
@@ -217,7 +298,7 @@ const Welcome = () => {
                       setIsLogin(false);
                     }}
                   >
-                    Don't have an account? Sign Up
+                    {t.dontHaveAccount}
                   </p>
                 </form>
               ) : (
@@ -226,7 +307,7 @@ const Welcome = () => {
                     style={styles.input}
                     type="text"
                     name="firstName"
-                    placeholder="First Name"
+                    placeholder={t.firstName}
                     value={signUpData.firstName}
                     onChange={handleSignUpChange}
                     required
@@ -235,7 +316,7 @@ const Welcome = () => {
                     style={styles.input}
                     type="text"
                     name="lastName"
-                    placeholder="Last Name"
+                    placeholder={t.lastName}
                     value={signUpData.lastName}
                     onChange={handleSignUpChange}
                     required
@@ -244,7 +325,7 @@ const Welcome = () => {
                     style={styles.input}
                     type="email"
                     name="email"
-                    placeholder="Your Username"
+                    placeholder={t.username}
                     value={signUpData.email}
                     onChange={handleSignUpChange}
                     required
@@ -253,13 +334,13 @@ const Welcome = () => {
                     style={styles.input}
                     type="password"
                     name="password"
-                    placeholder="Enter Password"
+                    placeholder={t.password}
                     value={signUpData.password}
                     onChange={handleSignUpChange}
                     required
                   />
                   <button type="submit" style={styles.loginButton}>
-                    Sign Up
+                    {t.signUp}
                   </button>
                   <p
                     style={styles.toggle}
@@ -268,7 +349,7 @@ const Welcome = () => {
                       setIsLogin(true);
                     }}
                   >
-                    Already have an account? Login
+                    {t.alreadyHaveAccount}
                   </p>
                 </form>
               )}
@@ -278,18 +359,18 @@ const Welcome = () => {
             </>
           ) : (
             <>
-              <h2 style={styles.welcomeHeading}>Reset Password</h2>
+              <h2 style={styles.welcomeHeading}>{t.resetPassword}</h2>
               <form onSubmit={handleForgotPasswordSubmit} style={styles.form}>
                 <input
                   style={styles.input}
                   type="email"
-                  placeholder="Enter your registered email"
+                  placeholder={t.enterRegisteredEmail}
                   value={forgotEmail}
                   onChange={handleForgotPasswordChange}
                   required
                 />
                 <button type="submit" style={styles.loginButton}>
-                  Send Reset Link
+                  {t.sendResetLink}
                 </button>
                 <p
                   style={styles.toggle}
@@ -299,7 +380,7 @@ const Welcome = () => {
                     setIsForgotPassword(false);
                   }}
                 >
-                  Back to Login
+                  {t.backToLogin}
                 </p>
               </form>
               {error && <p style={styles.errorMsg}>{error}</p>}
@@ -318,8 +399,7 @@ const styles = {
     minHeight: "100vh",
     fontFamily: "Arial, sans-serif",
     backgroundColor: "#0a0343ff",
-        overflow: "hidden",         // added here
-
+    overflow: "hidden",
   },
   leftSide: {
     flex: 1,
@@ -327,8 +407,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     padding: "40px",
-        overflow: "hidden",         // added here
-
+    overflow: "hidden",
   },
   image: {
     maxWidth: "100%",
@@ -345,8 +424,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-        overflow: "hidden",         // added here
-
+    overflow: "hidden",
   },
   welcomeHeading: {
     fontSize: "28px",

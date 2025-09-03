@@ -651,7 +651,12 @@ body.dark .feature-box h4 {
   color: #7fb3ff;
 }
 
-
+/* Remove overlay for image in last section in dark mode */
+.dark-mode .achievement-image-overlay,
+.dark-mode .achievement-img-overlay,
+.dark-mode .achievement-overlay {
+  background: transparent !important;
+}
 
 
 
