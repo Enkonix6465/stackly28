@@ -151,15 +151,75 @@
   }
 }
 
+/* ========================= */
+/* MOBILE & TABLET VIEW FIXES FOR ABOUT US PAGE */
+/* ========================= */
 
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .our-story-section {
+    flex-direction: column;
+    padding: 50px 10px;
+    text-align: center;
+    gap: 24px;
+  }
 
+  .content-wrapper,
+  .image-wrapper {
+    max-width: 100%;
+    flex: 1 1 100%;
+    padding: 0;
+    text-align: center;
+  }
 
+  .content-wrapper h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
 
+  .content-wrapper p {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 0;
+  }
 
+  .image-wrapper img {
+    max-height: 220px;
+    border-radius: 18px;
+  }
 
+  .story-btn {
+    margin-top: 18px;
+    width: 100%;
+    font-size: 1rem;
+  }
+}
 
+/* Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .our-story-section {
+    padding: 30px 4vw;
+    gap: 16px;
+  }
 
+  .content-wrapper h1 {
+    font-size: 1.3rem;
+  }
 
+  .content-wrapper p {
+    font-size: 0.95rem;
+  }
+
+  .image-wrapper img {
+    max-height: 140px;
+    border-radius: 10px;
+  }
+
+  .story-btn {
+    padding: 10px 0;
+    font-size: 0.95rem;
+  }
+}
 
 /*section3*/
 
@@ -963,5 +1023,24 @@
   .author-img {
     width: 40px;
     height: 40px;
+  }
+}
+
+/* Reduce Vision, Mission, Goal card text size and spacing for desktop */
+@media (min-width: 1025px) {
+  .cards-container {
+    gap: 20px;
+  }
+  .card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  .card p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .card {
+    padding: 18px 12px;
+    max-width: 270px;
   }
 }

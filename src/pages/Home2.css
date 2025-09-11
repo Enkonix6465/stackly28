@@ -883,20 +883,16 @@ h2 {
     height: 60vh;
     min-height: 350px;
   }
-
   .hero-overlay h1 {
     font-size: 1.6rem;
   }
-
   .hero-overlay p {
     font-size: 1rem;
   }
-
   .hero-buttons {
     flex-direction: column;
     gap: 10px;
   }
-
   .btn {
     width: 100%;
     padding: 10px 0;
@@ -1203,5 +1199,35 @@ h2 {
   .solutions-left p,
   .solution-list li {
     font-size: 0.9rem;
+  }
+}
+
+/* Center all business solutions content and text on mobile */
+@media (max-width: 768px) {
+  .business-solutions,
+  .solutions-container,
+  .solutions-left,
+  .solutions-right,
+  .solutions-left h2,
+  .solutions-left p,
+  .solution-list,
+  .solution-list li {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* Make "Get Free Consultation" button fit screen on mobile */
+@media (max-width: 768px) {
+  .btn.primary,
+  .get-consultation-btn {
+    width: 100% !important;
+    min-width: 0;
+    box-sizing: border-box;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 8px;
+    font-size: 1rem;
   }
 }

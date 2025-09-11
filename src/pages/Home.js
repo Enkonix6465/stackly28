@@ -355,6 +355,34 @@ function Home() {
             </motion.div>
           ))}
         </div>
+
+        {/* New Process Steps Row */}
+        <div className="process-steps-row mt-10">
+          <div className="process-step">
+            <div className="process-step-icon">
+              <img src={searchIcon} alt="Initial Discovery" />
+            </div>
+            <div className="process-step-title">Initial Discovery</div>
+          </div>
+          <div className="process-step">
+            <div className="process-step-icon">
+              <img src={planningIcon} alt="Planning & Strategy" />
+            </div>
+            <div className="process-step-title">Planning & Strategy</div>
+          </div>
+          <div className="process-step">
+            <div className="process-step-icon">
+              <img src={devIcon} alt="Development & Testing" />
+            </div>
+            <div className="process-step-title">Development & Testing</div>
+          </div>
+          <div className="process-step">
+            <div className="process-step-icon">
+              <img src={launchIcon} alt="Launch & Support" />
+            </div>
+            <div className="process-step-title">Launch & Support</div>
+          </div>
+        </div>
       </div>
     </section>
 
