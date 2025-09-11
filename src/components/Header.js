@@ -206,8 +206,12 @@ const Header = ({ toggleTheme, isDark }) => {
           </span>
           {activeDropdown === "home" && (
             <div className="dropdown">
-              <Link to="/home" onClick={handleLinkClick}>{translations[language].home}</Link>
-              <Link to="/home2" onClick={handleLinkClick}>{translations[language].home2}</Link>
+              <Link to="/home" onClick={handleLinkClick}>
+                {language === "en" ? "Home 1" : translations[language].home + " 1"}
+              </Link>
+              <Link to="/home2" onClick={handleLinkClick}>
+                {translations[language].home2}
+              </Link>
             </div>
           )}
         </div>
@@ -270,7 +274,7 @@ const Header = ({ toggleTheme, isDark }) => {
           onChange={e => {
             setLanguage(e.target.value);
             localStorage.setItem("language", e.target.value);
-            window.dispatchEvent(new Event("languageChanged")); // <-- Add this line
+            window.dispatchEvent(new Event("languageChanged"));
           }}
           style={{ marginRight: "10px", padding: "5px" }}
           aria-label="Select language direction"
@@ -279,9 +283,6 @@ const Header = ({ toggleTheme, isDark }) => {
           <option value="ar">العربية</option>
           <option value="he">עברית</option>
         </select>
-        <span style={{ marginRight: "10px", fontWeight: "bold" }}>
-          {languageNames[language]}
-        </span>
 
         <button className="themeToggle" onClick={toggleTheme}>
           {isDark ? "🌙" : "🌞"}

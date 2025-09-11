@@ -173,7 +173,8 @@ const Footer = () => {
               />
             </a>
           </div>
-          <p className="footer-contact">
+          <h3 style={{ margin: "18px 0 6px", color: "#0a0343ff" }}>{t.email} &amp; {t.phone}</h3>
+          <p className="footer-contact" style={{ fontWeight: "bold" }}>
             {t.email}: support@stackly.com<br />
             {t.phone}: +1 (800) 123-4567
           </p>

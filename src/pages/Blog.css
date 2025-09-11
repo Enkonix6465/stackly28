@@ -349,3 +349,194 @@
   background-color: #d4d2d2;
 }
 
+
+
+/* ==================== 1. Art Section (.art-section) ==================== */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .art-section {
+    padding: 35px 20px;
+    text-align: center; /* center all text on tablet */
+  }
+
+  .art-title {
+    font-size: 1.8rem;
+  }
+
+  .art-intro {
+    font-size: 1.05rem;
+    text-align: justify; /* justified for paragraphs */
+  }
+
+  .art-list {
+    font-size: 0.95rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+  }
+
+  .art-summary {
+    font-size: 0.95rem;
+    text-align: justify;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .art-section {
+    padding: 25px 15px;
+  }
+
+  .art-title {
+    font-size: 1.5rem;
+  }
+
+  .art-intro {
+    font-size: 1rem;
+  }
+
+  .art-list {
+    font-size: 0.9rem;
+  }
+
+  .art-summary {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .art-section {
+    padding: 20px 10px;
+  }
+
+  .art-title {
+    font-size: 1.3rem;
+  }
+
+  .art-intro,
+  .art-list,
+  .art-summary {
+    font-size: 0.85rem;
+  }
+}
+
+/* ==================== 2. Business Video Section (.business-video-section) ==================== */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .business-video-section {
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .business-video-section__title {
+    font-size: 2.2rem;
+  }
+
+  .business-video-section__subtitle {
+    font-size: 2.8rem;
+  }
+
+  .business-video-section__description {
+    font-size: 1rem;
+    max-width: 100%;
+    text-align: justify;
+    margin: 0 auto;
+  }
+
+  .business-video-section__video {
+    max-width: 100%;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .business-video-section__title {
+    font-size: 1.8rem;
+  }
+
+  .business-video-section__subtitle {
+    font-size: 2.2rem;
+  }
+
+  .business-video-section__description {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .business-video-section__title {
+    font-size: 1.5rem;
+  }
+
+  .business-video-section__subtitle {
+    font-size: 1.8rem;
+  }
+
+  .business-video-section__description {
+    font-size: 0.9rem;
+  }
+}
+
+/* ==================== 3. CTA Navigation Section (.cta-navigation-section) ==================== */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .cta-navigation-section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .cta-navigation-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-navigation-section p {
+    font-size: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: justify;
+  }
+
+  .cta-button {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .cta-navigation-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-navigation-section p {
+    font-size: 0.95rem;
+  }
+
+  .cta-button {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .cta-navigation-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .cta-navigation-section p {
+    font-size: 0.85rem;
+  }
+
+  .cta-button {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+}

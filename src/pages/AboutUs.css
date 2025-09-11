@@ -834,3 +834,134 @@
     align-items: center;
   }
 }
+
+
+
+/* ========================= */
+/* RESPONSIVE FIXES - TABLET & MOBILE */
+/* ========================= */
+
+/* OUR STORY SECTION */
+@media (max-width: 1024px) {
+  .our-story-section {
+    flex-direction: column;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .content-wrapper {
+    max-width: 100%;
+    transform: none;
+    text-align: center;
+  }
+
+  .content-wrapper h1 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .content-wrapper p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .image-wrapper {
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .image-wrapper img {
+    max-height: 280px;
+    border-radius: 20px;
+  }
+
+  .story-btn {
+    margin-top: 20px;
+  }
+}
+
+/* VISION & MISSION */
+@media (max-width: 1024px) {
+  .header-bg h2 {
+    font-size: 2.2rem;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+}
+
+/* WHY CHOOSE US */
+@media (max-width: 1024px) {
+  .reasons-container {
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .reason-card {
+    padding: 15px 20px;
+  }
+
+  .reason-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .progress-bar-bg {
+    width: 100%;
+    margin: 10px 0 0 0;
+  }
+}
+
+/* CONSULTING TESTIMONIALS */
+@media (max-width: 1024px) {
+  .consulting-testimonials-section .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .testimonials-header {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .testimonials-header h2 {
+    font-size: 2rem;
+  }
+
+  .testimonials-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* CENTERED TESTIMONIAL */
+@media (max-width: 1024px) {
+  .testimonial-heading {
+    font-size: 1.8rem;
+  }
+
+  .centered-testimonial {
+    margin: 20px 10px;
+    padding: 25px 15px;
+    font-size: 0.95rem;
+  }
+
+  .testimonial-author {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .author-img {
+    width: 40px;
+    height: 40px;
+  }
+}

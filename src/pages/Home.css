@@ -3,6 +3,16 @@
   width: 100%;
   height: 100vh; /* Full screen height */
   overflow: hidden;
+  
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+  background: linear-gradient(120deg, rgba(76, 75, 75, 0.65) 0%, rgba(30,30,60,0.45) 100%);
+  pointer-events: none;
 }
 
 .hero-video {
@@ -26,7 +36,8 @@
   color: white;
   text-align: center;
   padding: 0 20px;
-  background: rgba(0, 0, 0, 0.4); /* Dark overlay for better text visibility */
+  /* Remove background here if present */
+  background: none;
 }
 
 .hero-overlay h1 {
@@ -37,35 +48,11 @@
 }
 
 .hero-overlay p {
-  font-size: 1.2rem;
-  animation: fadeInRight 1s ease-out forwards;
+  font-size: 1.1rem;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 1px 4px rgba(255,255,255,0.2);
+  font-weight: 500;
 }
-.hero-buttons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* Primary Button */
-.btn {
-  padding: 12px 25px;
-  font-size: 1rem;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.btn-primary {
-  background-color: var(--scroll-btn-bg);
-  color: white;
-}
-
-.btn-primary:hover {
-    background-color: var(--scroll-btn-hover-bg);
-}
-
 
 /* Mobile view */
 @media (max-width: 768px) {
@@ -265,7 +252,7 @@
 .innovative-section {
   background-color: var(--footer-bg);
   color: var(--footer-text);
-  padding: 10px 20px;
+  padding: 5px 5px;
   text-align: center;
 }
 
@@ -552,78 +539,78 @@ body.dark .feature-box h4 {
 :root.dark-theme {
   --heading-color: #ffffff;
 }
-
-.step-content h3 {
-  font-size: 1.3rem;
-  margin: 0 0 6px;
-  color: var(--heading-color);
-}
-
 .consultation-process {
-  padding: 20px 30px;
-  background-color: #f9f9fb;
-  color: #0d1b2a;
+  background: linear-gradient(to bottom, #f9fbff, #ffffff);
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
-.process-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 10px;
+.consultation-process .process-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0a2a66;
+  margin-bottom: 0.5rem;
 }
 
-.process-subtitle {
-  text-align: center;
-  font-family: 'roboto';
-  font-size: 1.4rem;
+.consultation-process .process-subtitle {
+  font-size: 1.1rem;
   color: #555;
-  max-width: 600px;
-  margin: 0 auto 40px;
+  margin-bottom: 3rem;
 }
 
 .process-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  max-width: 900px;
-  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
 }
 
 .step {
-  display: flex;
-  align-items: center; 
-  margin-right: -20px;/* Center vertically */
-  gap: 20px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.step:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Blue gradient bubble for step numbers */
 .step-number {
-  font-size: 30px;
+  position: absolute;
+  top: -22px;
+  left: 20px;
+  background: linear-gradient(135deg, #007bff, #0056d2);
+  color: white;
+  font-size: 1rem;
   font-weight: bold;
-  color: #20439e;
-  min-width: 40px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   display: flex;
-   margin-bottom: -25px;
-  margin-right: -20px;/* Adjust for left alignment */
   align-items: center;
-  justify-content: center; /* Center horizontally */
-}
-
-.step-content {
-  flex: 1; /* Take available width */
-  text-align: center; /* Center text horizontally */
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 91, 187, 0.3);
+  border: 3px solid #fff;
+  z-index: 2;
 }
 
 .step-content h3 {
   font-size: 1.3rem;
-  margin: 0 0 6px;
-  color: #0d1b2a;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: #0a2a66;
 }
 
 .step-content p {
-  font-size: 1.3rem;
-  color: #444;
-  margin: 0;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
 }
-
 /* Responsive */
 @media (max-width: 768px) {
   .step {

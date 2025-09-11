@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import login from "../images/login.jpg";
+import logo from "../images/logo.png"; // Make sure the path and filename are correct
 
 // Translations object
 const translations = {
@@ -12,11 +13,11 @@ const translations = {
     password: "Enter Password",
     forgotPassword: "Forgot password?",
     login: "Login",
-    dontHaveAccount: "Don't have an account? Sign Up",
+    dontHaveAccount: "Don't have an account?",
     firstName: "First Name",
     lastName: "Last Name",
     signUp: "Sign Up",
-    alreadyHaveAccount: "Already have an account? Login",
+    alreadyHaveAccount: "Already have an account?",
     resetPassword: "Reset Password",
     enterRegisteredEmail: "Enter your registered email",
     sendResetLink: "Send Reset Link",
@@ -249,18 +250,38 @@ const Welcome = () => {
         </div>
 
         <div style={styles.rightSide}>
+          <img
+            src={logo}
+            alt="Logo"
+            style={{ width: 120, margin: "0 auto 24px", display: "block", cursor: "pointer" }}
+            onClick={() => {
+              setError("");
+              setIsLogin((prev) => !prev);
+            }}
+          />
           {!isForgotPassword ? (
             <>
               <h1 style={styles.welcomeHeading}>
-                {t.welcome} <span style={styles.highlight}>{t.stackly}</span>
+                <span
+                  style={{ ...styles.highlight, cursor: "pointer" }}
+                  onClick={() => {
+                    setError("");
+                    setIsLogin((prev) => !prev);
+                  }}
+                >
+                  {t.stackly}
+                </span>
               </h1>
               <p style={styles.welcomeSubtext}>
                 {t.welcomeBack}
               </p>
-
               {isLogin ? (
                 <form onSubmit={handleLoginSubmit} style={styles.form}>
+                  <label htmlFor="login-email" style={{ fontWeight: "bold" }}>
+                    {t.username} <span style={{ color: "red" }}>*</span>
+                  </label>
                   <input
+                    id="login-email"
                     style={styles.input}
                     type="email"
                     name="email"
@@ -269,7 +290,11 @@ const Welcome = () => {
                     onChange={handleLoginChange}
                     required
                   />
+                  <label htmlFor="login-password" style={{ fontWeight: "bold" }}>
+                    {t.password} <span style={{ color: "red" }}>*</span>
+                  </label>
                   <input
+                    id="login-password"
                     style={styles.input}
                     type="password"
                     name="password"
@@ -291,19 +316,31 @@ const Welcome = () => {
                   <button type="submit" style={styles.loginButton}>
                     <span role="img" aria-label="user-lock" style={{ marginRight: 8 }}>👤🔒</span> {t.login}
                   </button>
-                  <p
-                    style={styles.toggle}
-                    onClick={() => {
-                      setError("");
-                      setIsLogin(false);
-                    }}
-                  >
-                    {t.dontHaveAccount}
+                  <p style={{ ...styles.toggle, cursor: "default" }}>
+                    {t.dontHaveAccount.replace(/(\?|:)/, "$1")}
+                    <span
+                      style={{
+                        color: "#0a0343ff",
+                        textDecoration: "underline",
+                        cursor: "pointer",
+                        marginLeft: 5,
+                      }}
+                      onClick={() => {
+                        setError("");
+                        setIsLogin(false);
+                      }}
+                    >
+                      {t.signUp}
+                    </span>
                   </p>
                 </form>
               ) : (
                 <form onSubmit={handleSignUpSubmit} style={styles.form}>
+                  <label htmlFor="signup-firstname" style={{ fontWeight: "bold" }}>
+                    {t.firstName} <span style={{ color: "red" }}>*</span>
+                  </label>
                   <input
+                    id="signup-firstname"
                     style={styles.input}
                     type="text"
                     name="firstName"
@@ -312,7 +349,11 @@ const Welcome = () => {
                     onChange={handleSignUpChange}
                     required
                   />
+                  <label htmlFor="signup-lastname" style={{ fontWeight: "bold" }}>
+                    {t.lastName} <span style={{ color: "red" }}>*</span>
+                  </label>
                   <input
+                    id="signup-lastname"
                     style={styles.input}
                     type="text"
                     name="lastName"
@@ -321,7 +362,11 @@ const Welcome = () => {
                     onChange={handleSignUpChange}
                     required
                   />
+                  <label htmlFor="signup-email" style={{ fontWeight: "bold" }}>
+                    {t.username} <span style={{ color: "red" }}>*</span>
+                  </label>
                   <input
+                    id="signup-email"
                     style={styles.input}
                     type="email"
                     name="email"
@@ -330,7 +375,11 @@ const Welcome = () => {
                     onChange={handleSignUpChange}
                     required
                   />
+                  <label htmlFor="signup-password" style={{ fontWeight: "bold" }}>
+                    {t.password} <span style={{ color: "red" }}>*</span>
+                  </label>
                   <input
+                    id="signup-password"
                     style={styles.input}
                     type="password"
                     name="password"
@@ -342,18 +391,25 @@ const Welcome = () => {
                   <button type="submit" style={styles.loginButton}>
                     {t.signUp}
                   </button>
-                  <p
-                    style={styles.toggle}
-                    onClick={() => {
-                      setError("");
-                      setIsLogin(true);
-                    }}
-                  >
-                    {t.alreadyHaveAccount}
+                  <p style={{ ...styles.toggle, cursor: "default" }}>
+                    {t.alreadyHaveAccount.replace(/(\?|:)/, "$1")}
+                    <span
+                      style={{
+                        color: "#0a0343ff",
+                        textDecoration: "underline",
+                        cursor: "pointer",
+                        marginLeft: 5,
+                      }}
+                      onClick={() => {
+                        setError("");
+                        setIsLogin(true);
+                      }}
+                    >
+                      {t.login}
+                    </span>
                   </p>
                 </form>
               )}
-
               {error && <p style={styles.errorMsg}>{error}</p>}
               {resetMessage && <p style={{ color: "green", marginTop: 10 }}>{resetMessage}</p>}
             </>

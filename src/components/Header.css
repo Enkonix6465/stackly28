@@ -68,6 +68,13 @@
   font-weight: bold;
 }
 
+/* Active nav link color for dark theme */
+[data-theme="dark"] .nav-link.active,
+[data-theme="dark"] .nav-link:hover {
+  color: #d0e2f1 !important; /* Light blue for better contrast */
+  font-weight: bold;
+}
+
 /* Dropdown arrow */
 .arrow {
   font-size: 0.6rem;
@@ -86,23 +93,29 @@
   top: 100%;
   left: 0;
   background-color: var(--dropdown-bg);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  min-width: 160px;
+  min-width: 210px;
+  max-width: 260px;
   z-index: 1000;
-  border-radius: 4px;
+  border-radius: 10px;
+  padding: 8px 0;
+  font-size: 1rem;
 }
 
 .dropdown a {
-  padding: 0.75rem 1rem;
+  padding: 8px 18px;
   color: var(--text-color);
   text-decoration: none;
+  display: block;
   white-space: nowrap;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
 .dropdown a:hover {
-  background-color: var(--hover-bg);
+  background: #f0f4fa;
   color: black;
 }
 
@@ -129,7 +142,7 @@
 }
 
 .avatarCircle {
-  background-color:darkblue;
+  background-color: darkblue;
   color: white;
   width: 40px;
   height: 40px;
@@ -161,12 +174,71 @@
   height: 3px;
   background-color: var(--text-color);
   transition: 0.3s;
-}
+}@media (max-width: 768px) {
+  .header {
+    padding: 0.8rem 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-@media (max-width: 768px) {
+  /* Logo first */
+  .logo {
+    order: 1;
+    margin-right: 0.5rem;
+  }
+
+  /* Right section (language, theme, avatar) */
+  .rightSection {
+    order: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-right: 0.5rem;
+  }
+
+  /* Language dropdown smaller */
+  .languageSelect select {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.4rem;
+    width: auto;
+  }
+
+  /* Replace "English" with short "EN" */
+  .languageSelect select option[value="en"] {
+    font-size: 0.9rem;
+  }
+  .languageSelect select {
+    width: 55px; /* force compact width */
+  }
+
+  /* Avatar smaller */
+  .avatarCircle {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  /* Hamburger last */
+  .hamburger {
+    order: 3;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-self: center;
+  }
+
+  .bar {
+    width: 22px;
+    height: 2px;
+  }
+
+  /* Mobile nav dropdown */
   .nav {
     position: absolute;
-    top: 70px;
+    top: 60px;
     left: 0;
     width: 100%;
     background-color: var(--bg-color);
@@ -179,8 +251,53 @@
   .nav.open {
     display: flex;
   }
+}
+.dropdown {
+  position: absolute;
+  top: 100%;       /* below the parent */
+  left: 0;         /* align left with parent */
+  background-color: var(--dropdown-bg);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-width: 210px;
+  max-width: 260px;
+  z-index: 1000;
+  border-radius: 10px;
+  padding: 8px 0;
+  font-size: 1rem;
+}
 
-  .hamburger {
-    display: flex;
+/* Each dropdown item */
+.dropdown a {
+  padding: 10px 18px;
+  color: var(--text-color);
+  text-decoration: none;
+  display: block;
+  white-space: nowrap;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.dropdown a:hover {
+  background: var(--hover-bg);
+  color: black;
+}
+
+/* Services dropdown specifically (center alignment on mobile) */
+@media (max-width: 768px) {
+  .dropdown {
+    position: relative;  /* attach to flow */
+    top: auto;
+    left: auto;
+    width: 100%;         /* full width dropdown */
+    border-radius: 0;    /* flat edges for mobile */
+    box-shadow: none;    /* remove shadow on mobile */
+    padding: 0.5rem 0;
+  }
+
+  .dropdown a {
+    padding: 12px 16px;
+    width: 100%;
   }
 }

@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
 
 // other imports...
 
@@ -305,23 +307,56 @@ function Home() {
         </div>
       </section>
 
-      <section className="consultation-process">
-        <div className="container">
-          <h2 className="process-title">{t.processTitle}</h2>
-          <p className="process-subtitle">{t.processSubtitle}</p>
-          <div className="process-steps">
-            {t.steps.map((step, idx) => (
-              <div className="step" key={idx}>
-                <div className="step-number">{`0${idx + 1}`}</div>
-                <div className={`step-content step${idx + 1}`}>
-                  <h3>{step.title}</h3>
-                  <p>{step.desc}</p>
-                </div>
+      <section className="consultation-process bg-gradient-to-b from-white to-gray-50 py-16">
+      <div className="container mx-auto px-6">
+        {/* Title */}
+        <motion.h2
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl md:text-4xl font-bold text-center text-gray-900"
+        >
+          {t.processTitle}
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="text-center mt-3 text-lg text-gray-600"
+        >
+          {t.processSubtitle}
+        </motion.p>
+
+        {/* Steps */}
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
+          {t.steps.map((step, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.2 }}
+              className="step-card relative bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-8"
+            >
+              {/* Step number badge */}
+              <div className="absolute -top-5 left-6 w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-md">
+                {`0${idx + 1}`}
               </div>
-            ))}
-          </div>
+
+              {/* Step content */}
+              <div className="pt-6">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">{step.desc}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
 
       <section className="free-consult-section">
         <div className="free-consult-wrapper">

@@ -137,62 +137,278 @@ function AdminDashboard() {
   const { darkMode } = useDarkMode();
 
   return (
-    <div className={darkMode ? "dark-mode" : "light-mode"}>
-      <div className="admin-dashboard">
+    <div
+      className={darkMode ? "dark-mode" : "light-mode"}
+      style={{
+        minHeight: "100vh",
+        background: darkMode
+          ? "linear-gradient(135deg, #232526 0%, #414345 100%)"
+          : "linear-gradient(135deg, #e0eafc 0%, #cfdef3 40%, #f8fafc 100%)",
+        padding: "0",
+      }}
+    >
+      <div
+        className="admin-dashboard"
+        style={{
+          maxWidth: 1200,
+          margin: "0 auto",
+          padding: "32px 16px",
+          background: darkMode
+            ? "linear-gradient(135deg, #232526 0%, #434343 100%)"
+            : "linear-gradient(135deg, #f8fafc 0%, #e3e6ee 100%)",
+          borderRadius: "18px",
+          boxShadow: darkMode
+            ? "0 4px 32px rgba(0,0,0,0.7)"
+            : "0 4px 32px rgba(0,0,0,0.08)",
+        }}
+      >
         {/* Header */}
-        <header className="admin-header">
-          <h1>{t.dashboard}</h1>
+        <header
+          className="admin-header"
+          style={{
+            background: darkMode
+              ? "rgba(30,34,40,0.85)"
+              : "rgba(255,255,255,0.85)",
+            boxShadow: darkMode
+              ? "0 2px 12px rgba(0,0,0,0.4)"
+              : "0 2px 12px rgba(0,0,0,0.08)",
+            borderRadius: "12px",
+            padding: "18px 0",
+            marginBottom: "24px",
+            textAlign: "center",
+          }}
+        >
+          <h1 style={{ color: darkMode ? "#fff" : "#0a0343ff", margin: 0 }}>{t.dashboard}</h1>
         </header>
 
         {/* Info Cards */}
-        <div className="admin-cards">
-          <div className="card blue">
-            <h3>{t.totalUsers}</h3>
-            <p>{totalUsers}</p>
+        <div
+          className="admin-cards"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, minmax(120px, 1fr))",
+            gap: "18px",
+            fontSize: "15px",
+            marginBottom: "32px",
+            background: darkMode
+              ? "linear-gradient(135deg, #283e51 0%, #485563 100%)"
+              : "linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%)",
+            borderRadius: "14px",
+            boxShadow: darkMode
+              ? "0 2px 12px rgba(0,0,0,0.5)"
+              : "0 2px 12px rgba(0,0,0,0.08)",
+            padding: "18px 0",
+          }}
+        >
+          <div
+            className="card blue"
+            style={{
+              background: darkMode
+                ? "linear-gradient(135deg, #283e51 0%, #485563 100%)"
+                : "linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%)",
+              boxShadow: darkMode
+                ? "0 2px 10px rgba(0,0,0,0.5)"
+                : "0 2px 10px rgba(0,0,0,0.08)",
+              padding: "14px 10px",
+              borderRadius: "10px",
+              minWidth: "0",
+              color: darkMode ? "#fff" : "#0a0343ff",
+              textAlign: "center",
+            }}
+          >
+            <h3 style={{ fontSize: "16px" }}>{t.totalUsers}</h3>
+            <p style={{ fontSize: "18px" }}>{totalUsers}</p>
           </div>
-          <div className="card green">
-            <h3>{t.totalLogins}</h3>
-            <p>{totalLogins}</p>
+          <div
+            className="card green"
+            style={{
+              background: darkMode
+                ? "linear-gradient(135deg, #134e5e 0%, #71b280 100%)"
+                : "linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%)",
+              boxShadow: darkMode
+                ? "0 2px 10px rgba(0,0,0,0.5)"
+                : "0 2px 10px rgba(0,0,0,0.08)",
+              padding: "14px 10px",
+              borderRadius: "10px",
+              minWidth: "0",
+              color: darkMode ? "#fff" : "#0a0343ff",
+              textAlign: "center",
+            }}
+          >
+            <h3 style={{ fontSize: "16px" }}>{t.totalLogins}</h3>
+            <p style={{ fontSize: "18px" }}>{totalLogins}</p>
           </div>
-          <div className="card teal">
-            <h3>{t.activeToday}</h3>
-            <p>{activeToday}</p>
+          <div
+            className="card teal"
+            style={{
+              background: darkMode
+                ? "linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)"
+                : "linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%)",
+              boxShadow: darkMode
+                ? "0 2px 10px rgba(0,0,0,0.5)"
+                : "0 2px 10px rgba(0,0,0,0.08)",
+              padding: "14px 10px",
+              borderRadius: "10px",
+              minWidth: "0",
+              color: darkMode ? "#fff" : "#0a0343ff",
+              textAlign: "center",
+            }}
+          >
+            <h3 style={{ fontSize: "16px" }}>{t.activeToday}</h3>
+            <p style={{ fontSize: "18px" }}>{activeToday}</p>
           </div>
-          <div className="card purple">
-            <h3>{t.monthlySignups}</h3>
-            <p>{signupsThisMonth}</p>
+          <div
+            className="card purple"
+            style={{
+              background: darkMode
+                ? "linear-gradient(135deg, #41295a 0%, #2F0743 100%)"
+                : "linear-gradient(135deg, #f3e6ff 0%, #e9d8fd 100%)",
+              boxShadow: darkMode
+                ? "0 2px 10px rgba(0,0,0,0.5)"
+                : "0 2px 10px rgba(0,0,0,0.08)",
+              padding: "14px 10px",
+              borderRadius: "10px",
+              minWidth: "0",
+              color: darkMode ? "#fff" : "#0a0343ff",
+              textAlign: "center",
+            }}
+          >
+            <h3 style={{ fontSize: "16px" }}>{t.monthlySignups}</h3>
+            <p style={{ fontSize: "18px" }}>{signupsThisMonth}</p>
           </div>
         </div>
 
         {/* Charts */}
-        <div className="admin-charts">
-          <div className="chart-container">
-            <h3>{t.userEmailDomains}</h3>
-            <Doughnut data={doughnutData} />
+        <div
+          className="admin-charts"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "18px",
+            justifyContent: "center",
+            alignItems: "start",
+            marginBottom: "32px",
+            background: darkMode
+              ? "linear-gradient(135deg, #232526 0%, #434343 100%)"
+              : "linear-gradient(135deg, #fff 0%, #f8fafc 100%)",
+            borderRadius: "14px",
+            boxShadow: darkMode
+              ? "0 2px 12px rgba(0,0,0,0.5)"
+              : "0 2px 12px rgba(0,0,0,0.08)",
+            padding: "18px 0",
+          }}
+        >
+          <div
+            className="chart-container"
+            style={{
+              background: darkMode
+                ? "linear-gradient(135deg, #232526 0%, #414345 100%)"
+                : "linear-gradient(135deg, #fff 0%, #f8fafc 100%)",
+              boxShadow: darkMode
+                ? "0 2px 10px rgba(0,0,0,0.5)"
+                : "0 2px 10px rgba(0,0,0,0.08)",
+              borderRadius: "12px",
+              padding: "18px 0 0 0",
+              maxWidth: "100%",
+              height: 220,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <h3 style={{ color: darkMode ? "#fff" : "#0a0343ff" }}>{t.userEmailDomains}</h3>
+            <div style={{ width: 160, height: 160 }}>
+              <Doughnut data={doughnutData} options={{ maintainAspectRatio: false }} />
+            </div>
           </div>
-          <div className="chart-container">
-            <h3>{t.registrationsOverTime}</h3>
-            <Bar data={barData} />
+          <div
+            className="chart-container"
+            style={{
+              background: darkMode
+                ? "linear-gradient(135deg, #232526 0%, #414345 100%)"
+                : "linear-gradient(135deg, #fff 0%, #f8fafc 100%)",
+              boxShadow: darkMode
+                ? "0 2px 10px rgba(0,0,0,0.5)"
+                : "0 2px 10px rgba(0,0,0,0.08)",
+              borderRadius: "12px",
+              padding: "18px 0 0 0",
+              maxWidth: "100%",
+              height: 220,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <h3 style={{ color: darkMode ? "#fff" : "#0a0343ff" }}>{t.registrationsOverTime}</h3>
+            <div style={{ width: 180, height: 160 }}>
+              <Bar data={barData} options={{ maintainAspectRatio: false }} />
+            </div>
+          </div>
+          <div
+            className="chart-container"
+            style={{
+              background: darkMode
+                ? "linear-gradient(135deg, #232526 0%, #414345 100%)"
+                : "linear-gradient(135deg, #fff 0%, #f8fafc 100%)",
+              boxShadow: darkMode
+                ? "0 2px 10px rgba(0,0,0,0.5)"
+                : "0 2px 10px rgba(0,0,0,0.08)",
+              borderRadius: "12px",
+              padding: "18px 0 0 0",
+              maxWidth: "100%",
+              height: 220,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <h3 style={{ color: darkMode ? "#fff" : "#0a0343ff" }}>Admin Info</h3>
+            <div
+              style={{
+                textAlign: "center",
+                marginTop: 40,
+                color: darkMode ? "#fff" : "#0a0343ff",
+                fontWeight: "bold"
+              }}
+            >
+              Admin Panel<br />Statistics &amp; Controls
+            </div>
           </div>
         </div>
 
         {/* User Table */}
-        <div className="user-table">
-          <h2>{t.userDataTable}</h2>
-          <table dir={["ar", "he"].includes(language) ? "rtl" : "ltr"}>
+        <div
+          className="user-table"
+          style={{
+            background: darkMode
+              ? "linear-gradient(135deg, #232526 0%, #434343 100%)"
+              : "linear-gradient(135deg, #fff 0%, #f8fafc 100%)",
+            boxShadow: darkMode
+              ? "0 2px 10px rgba(0,0,0,0.5)"
+              : "0 2px 10px rgba(0,0,0,0.08)",
+            borderRadius: "12px",
+            padding: "24px",
+            marginBottom: "32px",
+          }}
+        >
+          <h2 style={{ color: darkMode ? "#fff" : "#0a0343ff" }}>{t.userDataTable}</h2>
+          <table dir={["ar", "he"].includes(language) ? "rtl" : "ltr"} style={{ width: "100%", background: "transparent" }}>
             <thead>
-              <tr>
-                <th>{t.name}</th>
-                <th>{t.email}</th>
-                <th>{t.loginDate}</th>
+              <tr style={{ background: "#0a1747" }}>
+                <th style={{ color: "#fff", fontWeight: "bold" }}>{t.name}</th>
+                <th style={{ color: "#fff", fontWeight: "bold" }}>{t.email}</th>
+                <th style={{ color: "#fff", fontWeight: "bold" }}>{t.loginDate}</th>
               </tr>
             </thead>
             <tbody>
               {users.map((user) => (
                 <tr key={user.email}>
-                  <td>{`${user.firstName} ${user.lastName}`}</td>
-                  <td>{user.email}</td>
-                  <td>{new Date(logins[user.email]).toLocaleString() || "N/A"}</td>
+                  <td style={{ color: darkMode ? "#fff" : "#0a0343ff" }}>{`${user.firstName} ${user.lastName}`}</td>
+                  <td style={{ color: darkMode ? "#fff" : "#0a0343ff" }}>{user.email}</td>
+                  <td style={{ color: darkMode ? "#fff" : "#0a0343ff" }}>{new Date(logins[user.email]).toLocaleString() || "N/A"}</td>
                 </tr>
               ))}
             </tbody>

@@ -563,3 +563,288 @@ body.dark-theme .contact-btn:hover {
 .dark-mode .contact-section p{
   color: #fff;
 }
+
+
+
+
+/* ==================== 1. Contact Cards Section (.contact-section & .contact-container) ==================== */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .contact-section {
+    padding: 70px 8%;
+    text-align: center;
+  }
+
+  .contact-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    gap: 20px;
+  }
+
+  .contact-card {
+    padding: 20px;
+  }
+
+  .icon-circle {
+    width: 55px;
+    height: 55px;
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .contact-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 50px 5%;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr; /* stack cards vertically */
+    gap: 15px;
+  }
+
+  .contact-card {
+    padding: 18px;
+  }
+
+  .icon-circle {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .contact-card h3 {
+    font-size: 1rem;
+  }
+
+  .contact-card p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 40px 5%;
+  }
+
+  .contact-card {
+    padding: 15px;
+  }
+
+  .icon-circle {
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+  }
+
+  .contact-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .contact-card p {
+    font-size: 0.8rem;
+  }
+}
+
+/* ==================== 2. Contact Full Section (.contact-full, .contact-left, .contact-right) ==================== */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .contact-full {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 5%;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .contact-left img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  .contact-right {
+    padding: 30px 10px;
+  }
+
+  .contact-right h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-right form {
+    max-width: 100%;
+  }
+
+  .contact-right input,
+  .contact-right textarea {
+    font-size: 0.95rem;
+  }
+
+  .contact-right button {
+    font-size: 0.95rem;
+    padding: 12px 0;
+  }
+
+  .success-box {
+    padding: 30px;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .contact-left img {
+    max-height: 250px;
+  }
+
+  .contact-right h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-right input,
+  .contact-right textarea {
+    font-size: 0.9rem;
+  }
+
+  .contact-right button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .success-box h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .contact-left img {
+    width: 100%;
+    max-height: 200px;
+  }
+
+  .contact-right h2 {
+    font-size: 1.3rem;
+  }
+
+  .contact-right form {
+    width: 100%;
+  }
+
+  .contact-right input,
+  .contact-right textarea {
+    font-size: 0.85rem;
+  }
+
+  .contact-right button {
+    font-size: 0.85rem;
+    padding: 8px 0;
+  }
+
+  .success-box h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* ==================== 3. Map Section (.map-section) ==================== */
+
+/* Tablet & Mobile */
+@media (max-width: 1024px) {
+  .map-section {
+    height: 400px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-section {
+    height: 350px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-section {
+    height: 300px;
+    padding: 5px;
+  }
+}
+
+/* ==================== 4. Contact Banner (.contact-banner) ==================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .contact-banner {
+    height: 50vh;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .contact-banner h2 {
+    font-size: 2rem;
+  }
+
+  .contact-banner p {
+    font-size: 1.1rem;
+  }
+
+  .contact-btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contact-banner {
+    height: auto;
+    padding: 20px 15px;
+  }
+
+  .contact-banner h2 {
+    font-size: 1.6rem;
+  }
+
+  .contact-banner p {
+    font-size: 1rem;
+  }
+
+  .contact-btn {
+    padding: 8px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .contact-banner h2 {
+    font-size: 1.4rem;
+  }
+
+  .contact-banner p {
+    font-size: 0.9rem;
+  }
+
+  .contact-btn {
+    padding: 6px 15px;
+    font-size: 0.85rem;
+  }
+}

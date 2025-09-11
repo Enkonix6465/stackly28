@@ -539,3 +539,234 @@
 
 
 
+/* ================== COACHING SOLUTIONS SECTION ================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .coaching-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .coaching-images-wrapper {
+    width: 400px;
+    height: 300px;
+  }
+
+  .coaching-image {
+    width: 220px;
+    height: 220px;
+  }
+
+  .coaching-text-content {
+    text-align: justify;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .coaching-images-wrapper {
+    width: 300px;
+    height: 250px;
+  }
+
+  .coaching-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .coaching-text-content h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .coaching-text-content p {
+    font-size: 1rem;
+    text-align: justify;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .coaching-images-wrapper {
+    width: 260px;
+    height: 220px;
+  }
+
+  .coaching-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .coaching-text-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .coaching-text-content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ================== CORE SOLUTIONS BOXES ================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .core-solutions-boxes {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .core-solutions-heading h2 {
+    font-size: 2rem;
+  }
+
+  .core-solutions-heading p {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .core-solution-box {
+    height: 250px;
+  }
+
+  .core-box-overlay h3 {
+    font-size: 1rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .core-solutions-boxes {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .core-solution-box {
+    height: 220px;
+  }
+
+  .core-box-overlay h3 {
+    font-size: 0.95rem;
+  }
+}
+
+/* ================== APART SECTION ================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .apart-features-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .apart-feature-card {
+    width: 45%;
+    text-align: center;
+  }
+
+  .apart-feature-card p {
+    text-align: justify;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .apart-feature-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .apart-main-heading {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .apart-subheading {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .apart-feature-card p {
+    font-size: 0.95rem;
+    text-align: justify;
+  }
+
+  .apart-strength-value {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .apart-main-heading {
+    font-size: 1.6rem;
+  }
+
+  .apart-subheading {
+    font-size: 0.9rem;
+  }
+
+  .apart-feature-card {
+    padding: 20px 15px;
+  }
+
+  .apart-feature-card p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ================== EXPERTISE / RINGS ================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .exp-rings-container {
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .exp-ring-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  .exp-ring-percent {
+    font-size: 1.1rem;
+  }
+
+  .exp-ring-label {
+    font-size: 0.9rem;
+  }
+}
+
+/* ================== QUOTE CAROUSEL ================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .qc-carousel {
+    max-width: 600px;
+    padding: 40px 15px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .qc-carousel {
+    max-width: 100%;
+    padding: 30px 15px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .qc-carousel {
+    font-size: 1rem;
+    padding: 20px 10px;
+  }
+}

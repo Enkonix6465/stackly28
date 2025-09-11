@@ -384,58 +384,88 @@
 .timeline {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  align-items: center;
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  margin: 48px 0 32px 0;
+  width: 100%;
 }
 
 .timeline::before {
   content: "";
   position: absolute;
-  top: 60px;
-  left: 0;
-  right: 0;
+  top: 50%;
+  left: 6%;
+  right: 6%;
   height: 4px;
-  background: #0a2a66; /* dark blue line */
+  background: #3976b8;
   z-index: 0;
+  transform: translateY(-50%);
+  border-radius: 2px;
 }
 
 .timeline-step {
-  width: 23%;
-  text-align: center;
   position: relative;
-  padding: 20px 10px;
-  background: transparent;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
 }
 
 .icon-circle {
-  background-color: #0a2a66; /* dark blue background */
-  color: white;
-  width: 60px;
-  height: 60px;
-  font-size: 28px;
+  width: 90px;
+  height: 90px;
+  background: #111;
   border-radius: 50%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 0 auto 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  justify-content: center;
+  font-size: 2.6rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  position: relative;
+  margin-bottom: 18px;
+  /* Center icon exactly on the line */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.timeline-step h3 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
+.timeline-step h3,
 .timeline-step p {
-  font-size: 14px;
-  color: #000;
-  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  .timeline {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 32px 0;
+  }
+  .timeline::before {
+    top: 0;
+    left: 50%;
+    right: auto;
+    width: 4px;
+    height: 100%;
+    transform: translateX(-50%);
+  }
+  .timeline-step {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  .icon-circle {
+    margin-bottom: 0;
+    margin-right: 18px;
+    top: 0;
+    transform: none;
+  }
+  .timeline-step h3,
+  .timeline-step p {
+    text-align: left;
+  }
 }
 
 /* Dark Theme - Work Process Section */
@@ -797,4 +827,381 @@
 .dark-mode .section-title {
   background: transparent !important;
   color: #fff !important;
+}
+
+.timeline::before {
+  display: none !important;
+}
+
+/* Consistent font for all h2 headings */
+h2 {
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #0a2a66;
+  margin-bottom: 18px;
+}
+
+/* Dark mode h2 headings */
+.dark-mode h2 {
+  color: #a3c4f3 !important;
+}
+
+
+
+
+
+/* ================= HERO SECTION ================= */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .hero {
+    height: 70vh;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1.2rem;
+  }
+
+  .hero-buttons {
+    gap: 12px;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh;
+    min-height: 350px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 0.95rem;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .hero-overlay h1 {
+    font-size: 1.3rem;
+  }
+
+  .hero-overlay p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+    padding: 8px 0;
+  }
+}
+
+/* ================= FLIP SECTION ================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .flip-box-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .flip-box {
+    width: 220px;
+    height: 280px;
+    margin: 0 auto;
+  }
+
+  .flip-section-heading {
+    text-align: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .flip-box-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .flip-box {
+    width: 90%;
+    height: 280px;
+  }
+
+  .flip-section-heading {
+    font-size: 1.6rem;
+  }
+
+  .flip-box-front p,
+  .flip-box-back p {
+    text-align: justify;
+    padding: 0 10px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .flip-box {
+    width: 100%;
+    height: 260px;
+  }
+
+  .flip-box-front h3,
+  .flip-box-back h3 {
+    font-size: 1rem;
+  }
+
+  .flip-box-front p,
+  .flip-box-back p {
+    font-size: 0.85rem;
+    text-align: justify;
+  }
+}
+
+/* ================= PARTNERS SECTION ================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .partner-logos-slider {
+    gap: 15px;
+  }
+
+  .partners-title,
+  .partners-subtitle {
+    text-align: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .partners-section {
+    padding: 30px 10px;
+  }
+
+  .partner-logo {
+    max-width: 80px;
+  }
+
+  .partners-title {
+    font-size: 1.8rem;
+  }
+
+  .partners-subtitle {
+    font-size: 1rem;
+    text-align: justify;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .partner-logo {
+    max-width: 60px;
+  }
+
+  .partners-title {
+    font-size: 1.5rem;
+  }
+
+  .partners-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+/* ================= WORK PROCESS / TIMELINE ================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .work-process-section em {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .timeline-step h3,
+  .timeline-step p {
+    text-align: justify;
+  }
+
+  .timeline-step p {
+    text-align: justify;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto 40px;
+  }
+
+  .timeline-step {
+    width: 100%;
+    padding-top: 60px;
+    margin-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icon-circle {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-bottom: 12px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .timeline-step h3 {
+    font-size: 1rem;
+  }
+
+  .timeline-step p {
+    font-size: 0.95rem;
+    text-align: justify;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .timeline-step h3 {
+    font-size: 0.95rem;
+  }
+
+  .timeline-step p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ================= ACHIEVEMENT SECTION ================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .achievement-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .achievement-box h2 {
+    font-size: 3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .achievement-box {
+    flex: 1 1 45%;
+    margin: 15px;
+    text-align: center;
+  }
+
+  .achievement-box h2 {
+    font-size: 2.5rem;
+  }
+
+  .achievement-box p {
+    text-align: center;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .achievement-box {
+    flex: 1 1 100%;
+  }
+
+  .achievement-box h2 {
+    font-size: 2rem;
+  }
+
+  .achievement-box p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ================= BUSINESS SOLUTIONS ================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .solutions-container {
+    flex-direction: column;
+    align-items: justify;
+  }
+
+  .solutions-left,
+  .solutions-right {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .solutions-left p,
+  .solution-list li {
+    text-align: justify;
+  }
+
+  .solutions-right img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .solutions-left h2 {
+    font-size: 2rem;
+  }
+
+  .solutions-left p,
+  .solution-list li {
+    font-size: 0.95rem;
+    text-align: justify;
+  }
+
+  .solutions-right img {
+    max-width: 100%;
+  }
+
+  .btn.primary {
+    width: 100%;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .solutions-left h2 {
+    font-size: 1.6rem;
+  }
+
+  .solutions-left p,
+  .solution-list li {
+    font-size: 0.9rem;
+  }
 }
