@@ -154,86 +154,170 @@ body,
 }
 
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
+/* Tablet Responsive (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .admin-dashboard {
+    padding: 12px;
+  }
+
   .admin-header {
     flex-direction: column;
     align-items: flex-start;
-    padding: 15px 10px;
     gap: 10px;
-  }
-
-  .admin-header img {
-    height: 35px;
-    width: auto;
+    padding: 12px 8px;
   }
 
   .admin-header h1 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .admin-cards {
-    grid-template-columns: 1fr; /* stack cards vertically */
-    gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
   }
 
   .card {
-    padding: 15px;
-    font-size: 0.9rem;
+    padding: 14px;
+    font-size: 0.95rem;
   }
 
   .admin-charts {
     flex-direction: column;
+    gap: 18px;
+  }
+
+  .chart-container {
+    min-width: 0 !important;
+    max-width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+
+  .user-table {
+    padding: 12px;
+  }
+
+  .user-table h2 {
+    font-size: 1.1rem;
+  }
+
+  /* Fix admin cards overflow and centering on small screens */
+  .admin-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 14px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .card {
+    min-width: 180px;
+    max-width: 100%;
+    flex: 1 1 180px;
+    margin: 0;
+  }
+}
+
+/* Mobile Responsive (max-width: 768px) */
+@media (max-width: 768px) {
+  .admin-dashboard {
+    padding: 6px;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 4px;
+    gap: 8px;
+  }
+
+  .admin-header img {
+    height: 30px;
+    width: auto;
+  }
+
+  .admin-header h1 {
+    font-size: 1.1rem;
+  }
+
+  .admin-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .card {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  .admin-charts {
+    flex-direction: column;
+    gap: 12px;
   }
 
   .chart-container {
     min-width: 100% !important;
     max-width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
+    padding: 8px;
+    margin-bottom: 12px;
   }
 
   .chart-container canvas {
-    max-height: 200px !important;
+    max-height: 140px !important;
     width: 100% !important;
   }
 
   .user-table {
-    padding: 15px;
-    overflow-x: auto; /* allow horizontal scroll on very small screens */
+    padding: 8px;
+    overflow-x: auto;
   }
 
   .user-table table {
     width: 100%;
-    min-width: 600px; /* to keep table readable */
+    min-width: 500px;
   }
 
   .user-table th,
   .user-table td {
-    padding: 8px;
-    font-size: 0.85rem;
+    padding: 6px;
+    font-size: 0.75rem;
   }
 
   .user-table h2 {
-    font-size: 1.2rem;
-  }
-}
-
-/* Optional: smaller mobile devices */
-@media (max-width: 400px) {
-  .admin-header h1 {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
+  /* Fix admin cards overflow and centering on small screens */
+  .admin-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    overflow-x: visible !important;
+  }
   .card {
-    font-size: 0.8rem;
-    padding: 12px;
+    width: 95% !important;
+    min-width: 0 !important;
+    max-width: 350px !important;
+    margin: 0 auto !important;
   }
-
-  .user-table th,
-  .user-table td {
-    font-size: 0.75rem;
-    padding: 6px;
+  .admin-charts {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .chart-container {
+    width: 95% !important;
+    min-width: 0 !important;
+    max-width: 350px !important;
+    margin: 0 auto 12px auto !important;
   }
 }
 body.dark-theme .admin-dashboard {
