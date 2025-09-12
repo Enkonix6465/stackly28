@@ -16,6 +16,10 @@ import rocket from "../images/rocket.png";
 import cloud from "../images/cloud.png";
 import idea from "../images/idea.png";
 import chart from "../images/chart.png";
+import searchIcon from '../images/search.png';
+import planningIcon from '../images/planning.png';
+import devIcon from '../images/dev.png';
+import launchIcon from '../images/launch.png';
 
 const translations = {
   en: {
